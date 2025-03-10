@@ -1,0 +1,9 @@
+id,name,quantity
+1,Kitkat,132
+2,Twix,96
+3,Mars,192
+4,Daim,279
+5,MnMs,246
+6,Snickers,77
+7,Bounty,80
+8,MilkyWay,109
