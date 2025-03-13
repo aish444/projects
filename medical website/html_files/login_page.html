@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | CareWell Medical Clinic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css_files/login.css"> <!-- Updated CSS file path -->
+    
+    <!-- Include the CryptoJS library for encryption -->
+    <script src="/js_files/crypto-js.min.js"></script> <!-- Use relative path here -->
+    
+    <!-- Clear session data on load to enforce login -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Clear all session data to enforce fresh login
+            localStorage.removeItem('userRole');
+            localStorage.removeItem('loggedInAdmin');
+            localStorage.removeItem('loggedInDoctorId');
+            localStorage.removeItem('loggedInPatientId');
+            console.log("Session cleared. Please log in again.");
+        });
+    </script>
+</head>
+<body id="body"> <!-- Added id for background color change -->
+    <!-- Login Forms -->
+    <div class="container">
+
+        <!-- Admin Login -->
+        <div id="admin" class="tab-content">
+            <div class="login-box">
+                <div class="left-box">
+                    <h2 class="fade-element">Hello Admin!</h2>
+                    <p class="fade-element">Sign in to your account</p>
+                    <form id="admin-login-form" action="#" method="POST">
+                        <div class="input-box fade-element">
+                            <input type="text" id="admin-username" name="username" placeholder="Enter your username" autocomplete="off" required>
+                        </div>
+                        <div class="input-box fade-element">
+                            <input type="password" id="admin-password" name="password" required placeholder="Password">
+                            <span class="toggle-password" onclick="togglePassword('admin-password', this)">&#128065;</span>
+                        </div>
+                        <div class="button-container fade-element">
+                            <button type="submit" class="tab-btn">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="right-box">
+                    <h2>Welcome Back, Admin!</h2>
+                    <p>Manage patient records, appointments, and system settings efficiently.</p>
+                    <img src="/assets/gifs/admin.gif" alt="Admin" class="welcome-image" id="adminImage">
+
+                    <div class="extra-buttons fade-element">
+                        <a href="#" onclick="openTab('doctor', '/assets/gifs/doctor.gif', 'linear-gradient(135deg, #00aaff, #0080ff)', 'linear-gradient(135deg, #cceeff, #b3e6ff)')" class="tab-btn">Doctor Login</a>
+                        <a href="#" onclick="openTab('patient', '/assets/gifs/patient.gif', 'linear-gradient(135deg, #d1e8ff, #b3d1ff)', 'linear-gradient(135deg, #f0f8ff, #e6f0ff)')" class="tab-btn">Patient Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Doctor Login -->
+        <div id="doctor" class="tab-content">
+            <div class="login-box">
+                <div class="left-box">
+                    <h2 class="fade-element">Hello Doctor!</h2>
+                    <p class="fade-element">Sign in to your account</p>
+                    <form id="doctor-login-form" action="#" method="POST">
+                        <div class="input-box fade-element">
+                            <input type="email" id="doctor-email" name="email" required placeholder="E-mail" autocomplete="off" required>
+                        </div>
+                        <div class="input-box fade-element">
+                            <input type="password" id="doctor-password" name="password" required placeholder="Password">
+                            <span class="toggle-password" onclick="togglePassword('doctor-password', this)">&#128065;</span>
+                        </div>
+                        <div class="button-container fade-element">
+                            <button type="submit" class="tab-btn">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="right-box">
+                    <h2>Welcome Back, Doctor!</h2>
+                    <p>Manage your patients, appointments, and medical records efficiently.</p>
+                    <img src="/assets/gifs/doctor.gif" alt="Doctor" class="welcome-image" id="doctorImage">
+
+                    <div class="extra-buttons fade-element">
+                        <a href="#" onclick="openTab('admin', '/assets/gifs/admin.gif', 'linear-gradient(135deg, #002a5c, #004080)', 'linear-gradient(135deg, #99bbcc, #a6bddb)')" class="tab-btn">Admin Login</a>
+                        <a href="#" onclick="openTab('patient', '/assets/gifs/patient.gif', 'linear-gradient(135deg, #d1e8ff, #b3d1ff)', 'linear-gradient(135deg, #f0f8ff, #e6f0ff)')" class="tab-btn">Patient Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Patient Login (Default) -->
+        <div id="patient" class="tab-content active">
+            <div class="login-box">
+                <div class="left-box">
+                    <h2 class="fade-element">Hello Patient!</h2>
+                    <p class="fade-element">Sign in or register to manage your health</p>
+                    <form id="patient-login-form" action="#" method="POST">
+                        <div class="input-box fade-element">
+                            <input type="email" id="patient-email" name="email" required placeholder="E-mail" autocomplete="off" required>
+                        </div>
+                        <div class="input-box fade-element">
+                            <input type="password" id="patient-password" name="password" required placeholder="Password">
+                            <span class="toggle-password" onclick="togglePassword('patient-password', this)">&#128065;</span>
+                        </div>
+                        <div class="button-container fade-element">
+                            <button type="submit" class="tab-btn">Sign In</button>
+                        </div>
+                        <div class="register-prompt fade-element">
+                            <p>You do not have an account yet?</p>
+                            <a href="/html_files/register_page.html" class="tab-btn register-link">REGISTER here</a>
+                        </div>                                                                                          
+                    </form>
+                </div>
+                <div class="right-box">
+                    <h2>Welcome Back, Patient!</h2>
+                    <p>Book appointments, view medical records, and manage your health</p>
+                    <img src="/assets/gifs/patient.gif" alt="Patient" class="welcome-image" id="patientImage">
+
+                    <div class="extra-buttons fade-element">
+                        <a href="#" onclick="openTab('admin', '/assets/gifs/admin.gif', 'linear-gradient(135deg, #002a5c, #004080)', 'linear-gradient(135deg, #99bbcc, #a6bddb)')" class="tab-btn">Admin Login</a>
+                        <a href="#" onclick="openTab('doctor', '/assets/gifs/doctor.gif', 'linear-gradient(135deg, #00aaff, #0080ff)', 'linear-gradient(135deg, #cceeff, #b3e6ff)')" class="tab-btn">Doctor Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- JavaScript for Tab Navigation with background and button color transition -->
+    <script>
+        function openTab(tabName, imageSrc, gradient, lighterGradient) {
+            var i, tabcontent, image, body, rightBox, buttons;
+
+            // Fade out the body background first
+            body = document.getElementById("body");
+            body.classList.add("fade-out"); // Apply fade-out class
+
+            setTimeout(function() {
+                tabcontent = document.getElementsByClassName("tab-content");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                document.getElementById(tabName).style.display = "flex";
+
+                // Change GIF image with fade-in/fade-out effect
+                image = document.querySelector(`#${tabName} .welcome-image`);
+                image.style.opacity = 0;
+                setTimeout(function() {
+                    image.src = imageSrc;
+                    image.style.opacity = 1;
+                }, 300);
+
+                // Change background to gradient
+                body.style.background = gradient;
+
+                // Change right box to a lighter gradient
+                rightBox = document.querySelector(`#${tabName} .right-box`);
+                rightBox.style.background = lighterGradient;
+
+                // Update buttons' hover color to match the gradient background
+                buttons = document.querySelectorAll('.tab-btn');
+                buttons.forEach(function(button) {
+                    button.style.setProperty('--hover-color', gradient);
+                });
+
+                // Fade back in the body background
+                setTimeout(function() {
+                    body.classList.remove("fade-out"); // Remove fade-out class to fade back in
+                }, 300);
+            }, 300);
+        }
+
+        function togglePassword(inputId, icon) {
+            const input = document.getElementById(inputId);
+            if (input.type === "password") {
+                input.type = "text";
+                icon.innerHTML = "&#128065;"; // Open eye emoji
+            } else {
+                input.type = "password";
+                icon.innerHTML = "&#128584;"; // Closed eye emoji
+            }
+        }
+
+        // Initial background gradient on load
+        document.addEventListener("DOMContentLoaded", function() {
+            openTab('patient', '/assets/gifs/patient.gif', 'linear-gradient(135deg, #d1e8ff, #b3d1ff)', 'linear-gradient(135deg, #f0f8ff, #e6f0ff)');
+        });
+    </script>
+
+    <!-- Include Admin, Doctor, and Patient Login JavaScript -->
+    <script src="/js_files/encryption.js"></script>
+    <script src="/js_files/admin_login.js" defer></script>
+    <script src="/js_files/doctor_login.js" defer></script>
+    <script src="/js_files/patient_login.js" defer></script>
+</body>
+</html>

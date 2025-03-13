@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="/css_files/register_page.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <script src="/js_files/crypto-js.min.js"></script>
+</head>
+<body>
+    <!-- Fullscreen Video Background -->
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="/assets/videos/registervid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="container">
+        <div class="bubble">
+            <div id="text"></div>
+        </div>
+
+        <div class="speaker">
+            <form>
+                <!-- Layer 1: Basic Details -->
+                <div id="layer1">
+                    <div class="input-group">
+                        <select id="title" class="input-field" autocomplete="off">
+                            <option value="" disabled selected>Title</option>
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Ms">Ms</option>
+                            <option value="Dr">Dr</option>
+                            <option value="Honorable">Honorable</option>
+                            <option value="Rev">Rev</option>
+                        </select>
+                        <small class="error-message" id="title-error"></small>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="First Name" id="fName" class="input-field" autocomplete="off">
+                        <small class="error-message" id="fName-error"></small>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Last Name" id="lName" class="input-field" autocomplete="off">
+                        <small class="error-message" id="lName-error"></small>
+                    </div>
+                    <div class="input-group">
+                        <select id="gender" class="input-field" autocomplete="off">
+                            <option value="" disabled selected>Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                        <small class="error-message" id="gender-error"></small>
+                    </div>
+                    <div class="input-group">
+                        <input type="date" placeholder="Date of Birth" id="dob" class="input-field" max="" autocomplete="off">
+                        <small class="error-message" id="dob-error"></small>
+                    </div>
+                </div>
+
+                <!-- Layer 2: NHS Number -->
+                <div id="layer2">
+                    <div class="input-group">
+                        <input type="text" placeholder="Your NHS number here" id="nhs" class="input-field" maxlength="10" autocomplete="off">
+                        <small class="error-message" id="nhs-error"></small>
+                    </div>
+                </div>
+
+                <!-- Layer 3: Contact Details -->
+                <div id="layer3">
+                    <div class="input-group">
+                        <input type="text" placeholder="Your address here" id="address" class="input-field" autocomplete="off">
+                        <small class="error-message" id="address-error"></small>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" placeholder="Your email here" id="email" class="input-field" autocomplete="off">
+                        <small class="error-message" id="email-error"></small>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" placeholder="Your telephone number here" id="telephone" class="input-field" autocomplete="off">
+                        <small class="error-message" id="telephone-error"></small>
+                    </div>
+                </div>
+
+                <!-- Layer 4: Additional Medical Information -->
+                <div id="layer4">
+                    <div class="input-group">
+                        <input type="text" placeholder="Your height in cm here" id="height" class="input-field" autocomplete="off">
+                        <small class="error-message" id="height-error"></small>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Your weight in kg here" id="weight" class="input-field" autocomplete="off">
+                        <small class="error-message" id="weight-error"></small>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Your blood type here" id="bloodType" class="input-field" autocomplete="off">
+                        <small class="error-message" id="bloodType-error"></small>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Your average heart rate here" id="averageHeartRate" class="input-field" autocomplete="off">
+                        <small class="error-message" id="averageHeartRate-error"></small>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Button Containers -->
+        <div class="btn-container" id="btn1-container">
+            <button onclick="to2()" class="btn">Next</button>
+        </div>
+        <div class="btn-container" id="btn2-container">
+            <button onclick="backTo1()" class="btn">Back</button>
+            <button onclick="to3()" class="btn">Next</button>
+        </div>
+        <div class="btn-container" id="btn3-container">
+            <button onclick="backTo2()" class="btn">Back</button>
+            <button onclick="to4()" class="btn">Next</button>
+        </div>
+        <div class="btn-container" id="btn4-container">
+            <button onclick="backTo3()" class="btn">Back</button>
+            <button onclick="to5()" class="btn finish">Finish</button>
+        </div>
+    </div>
+
+    <!-- Video Element Wrapper for Feedback Video -->
+    <div class="video-wrapper">
+        <video id="welcomeVideo" autoplay muted loop>
+            <source src="/assets/videos/doctor_welcome.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script src="/js_files/encryption.js"></script>
+    <script src="/js_files/register_page.js"></script>
+</body>
+</html>

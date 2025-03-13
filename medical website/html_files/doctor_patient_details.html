@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Details</title>
+    <link rel="stylesheet" href="/css_files/doctor_patient_details.css">
+    <!-- Include CryptoJS for encryption and encryption.js for custom encryption functions -->
+    <script src="/js_files/crypto-js.min.js"></script>
+    <script src="/js_files/encryption.js"></script>
+    <!-- Access control script -->
+    <script src="/js_files/access_control.js"></script>
+    <!-- Main JavaScript file for handling patient details and notes -->
+    <script defer src="/js_files/doctor_patient_details.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            checkAccess('doctor_patient_details'); // Check access for doctor_patient_details page
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 id="patient-title-name"></h1> <!-- Dynamic title for the patient -->
+        <!-- Patient Photo and other details follow here -->
+        
+        <!-- Patient Photo -->
+        <img src="/assets/gifs/patientprof.gif" alt="Patient Photo" id="patient-photo">
+
+        <!-- Horizontal layout for data sections -->
+        <div class="sections">
+            <!-- Patient Data Section -->
+            <section id="patient-data" class="section">
+                <h2>Patient Data</h2>
+                <p id="patient-info">
+                    <strong>Title:</strong> <span id="patient-title"></span><br>
+                    <strong>Name:</strong> <span id="patient-name"></span><br>
+                    <strong>NHS:</strong> <span id="patient-nhs"></span><br>
+                    <strong>Gender:</strong> <span id="patient-gender"></span><br>
+                    <strong>Email:</strong> <span id="patient-email"></span><br>
+                    <strong>Telephone:</strong> <span id="patient-telephone"></span><br>
+                    <strong>Average Heart Rate:</strong> <span id="patient-heart-rate"></span><br>
+                    <strong>Height:</strong> <span id="patient-height"></span><br>
+                    <strong>Weight:</strong> <span id="patient-weight"></span><br>
+                    <strong>Blood Type:</strong> <span id="patient-blood-type"></span>
+                </p>
+            </section>
+
+            <!-- Medical Notes Section -->
+            <section id="medical-notes" class="section">
+                <h2>Medical Notes</h2>
+                <div id="notes-content">
+                    <!-- Notes will be displayed here -->
+                </div>
+                <form id="note-form">
+                    <textarea id="note-content" placeholder="Enter your note here..." required></textarea>
+                    <select id="note-status">
+                        <option value="active">Active</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                    <button type="submit">Add Note</button>
+                </form>
+            </section>            
+
+            <!-- Medical History Section -->
+            <!-- Medical History Section -->
+            <section id="medical-history" class="section">
+                <h2>Medical History</h2>
+                <div id="history-content">
+                    <!-- History entries will be displayed here -->
+                </div>
+                <form id="history-form">
+                    <textarea id="history-content-input" placeholder="Enter history details..." required></textarea>
+                    <select id="history-type">
+                        <option value="treatment">Treatment</option>
+                        <option value="surgery">Surgery</option>
+                        <option value="checkup">Checkup</option>
+                        <option value="vaccination">Vaccination</option>
+                        <option value="diagnosis">Diagnosis</option> <!-- New option -->
+                        <option value="medication">Medication</option> <!-- New option -->
+                        <option value="test-results">Test Results</option> <!-- New option -->
+                    </select>
+                    <button type="submit">Add History</button>
+                </form>
+            </section>
+
+        </div>
+    </div>
+</body>
+</html>

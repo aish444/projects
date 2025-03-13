@@ -1,0 +1,608 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8; /* Fallback background color */
+    background-image: url('/assets/images/admindbbg.jpeg'); /* Background image */
+    background-size: cover; /* Cover viewport */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Fixed background on scroll */
+    background-repeat: no-repeat; /* No repeat */
+    height: 100vh; /* Full viewport height */
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #0f2c40;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 8em;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden; 
+}
+
+/* Video styling */
+.sidebar video {
+    width: 90%; 
+    height: auto;
+    position: absolute;
+    top: 100px; /* Move the video lower */
+    left: 0;
+    z-index: -1; 
+    object-fit: cover;
+    opacity: 0.9; 
+    margin-left: 5%; /* Center the video horizontally */
+}
+
+/* Container for sidebar content to ensure layering */
+.sidebar .content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin-top: auto;
+    padding-bottom: 4em;
+}
+
+/* List styles */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align to the left */
+    justify-content: flex-start; /* Align to the left */
+    gap: 1.5em;
+    margin-top: 0; 
+    padding-left: 20px; /* Shift buttons more to the right */
+}
+
+/* Button-like links */
+.sidebar ul li {
+    width: 90%;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the start of the button */
+    padding: 1em 1.5em;
+    background-color: #85b4da;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+    width: 55%; 
+    text-align: left; /* Align text to the left */
+    font-size: 1rem;
+    margin-left: 20px; /* Move the buttons further to the right */
+}
+
+/* Hover effect */
+.sidebar ul li a:hover {
+    background-color: #b2d4f0;
+    transform: translateY(-2px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Active state */
+.sidebar ul li a.active {
+    background-color: #41749d;
+}
+
+/* Icon styling */
+.icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon img {
+    width: 110%;
+    height: 110%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    margin-left: 250px; /* Leave space for the fixed sidebar */
+    padding: 30px;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    min-height: 100vh;
+    box-sizing: border-box; /* Include padding in calculations */
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+.header h1 {
+    font-size: 24px;
+    color: #0f2c40;
+    margin: 0;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.profile-text {
+    text-align: left;
+}
+
+.profile-name {
+    margin: 0;
+    font-weight: bold;
+    color: #0f2c40;
+}
+
+.profile-role {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.logout-button {
+    background-color: #0f2c40;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #0056b3;
+}
+
+/* Stats Section */
+.stats-section {
+    text-align: left;
+    padding: 40px 20px;
+    background-color: #a9cfef;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    margin-top: -30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stats-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #0f2c40;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    gap: 20px; /* Ensure spacing between boxes */
+}
+
+.stat-box {
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+    padding: 20px;
+    border-radius: 20px;
+    width: 30%; /* Make stat boxes responsive */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.stat-box:hover {
+    transform: translateY(-10px);
+}
+
+.stat-box h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #0f2c40;
+}
+
+.stat-num {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.stat-box p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Charts Section */
+.charts-section {
+    margin-top: 40px;
+    padding: 30px 15px; 
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Container to hold the chart boxes */
+.charts-container {
+    display: flex;
+    justify-content: space-evenly; /* Ensure even spacing */
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap; /* Ensure they don't stretch and wrap on smaller screens */
+}
+
+/* Individual chart box styling */
+.chart-box {
+    flex: 0 1 45%; /* Make each chart take up to 45% of the container width */
+    max-width: 450px; /* Limit the maximum width of the chart box */
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 10px; 
+}
+
+.chart-box h3 {
+    margin-bottom: 10px;
+    color: #0f2c40;
+    font-size: 1.2rem;
+}
+
+.chart-box canvas {
+    width: 100% !important;
+    height: 360px !important;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .charts-container {
+        flex-direction: column; /* Stack charts vertically on smaller screens */
+        gap: 30px; /* Increase gap for stacked layout */
+    }
+
+    .chart-box {
+        width: 90%; /* Reduce width to fit better on smaller screens */
+        max-width: none; /* Remove max-width limitation */
+    }
+}
+
+/* Doctor List Section */
+.doctor-list-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e9f4fb; /* Light blue background */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 250px; /* Ensure it doesn't overlap with the sidebar */
+    box-sizing: border-box;
+}
+
+/* Title Styling */
+.doctor-list-section h2 {
+    text-align: center;
+    color: #0f2c40;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+/* Doctor List Cards */
+.doctor-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.doctor-card {
+    background-color: #ffffff;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+/* Hover Effect with Colors */
+.doctor-card:hover {
+    transform: translateY(-5px); /* Slight upward movement */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Elevated shadow */
+    border-color: #85b4da; /* Blue border on hover */
+}
+
+/* Doctor Card Text Styling */
+.doctor-card h3 {
+    color: #0f2c40;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.doctor-card p {
+    margin: 3px 0;
+    color: #666;
+}
+
+.doctor-card p strong {
+    color: #0f2c40;
+}
+
+/* Search Bar Styling */
+.search-bar {
+    width: 100%;
+    max-width: 500px;
+    margin: 15px auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: block;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #85b4da;
+    box-shadow: 0 0 10px rgba(0, 168, 240, 0.5); /* Blue glow on focus */
+}
+
+/* Hover Effect for Doctor Cards */
+.doctor-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px); /* Slight upward movement on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Elevated shadow on hover */
+}
+
+/* Button Styles */
+.edit-btn, .delete-btn {
+    margin-top: 10px;
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.edit-btn {
+    background-color: #85b4da;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #007bb8;
+}
+
+.delete-btn {
+    background-color: #FF5C5C;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #CC4C4C;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 40%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #85b4da;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #007bb8;
+}
+
+/* Enroll Doctor Section */
+.enroll-doctor-section {
+    margin-top: 40px;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px; 
+    width: 90%; /* Ensure it scales well across different screen sizes */
+    margin-left: auto; /* Center the section horizontally */
+    margin-right: auto; /* Center the section horizontally */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Enroll Doctor Section */
+.enroll-doctor-section {
+    margin-top: 40px;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px; 
+    width: 90%; /* Ensure it scales well across different screen sizes */
+    margin-left: 500px; /* Center the section horizontally */
+    margin-right: auto; /* Center the section horizontally */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Enroll Doctor Section Title */
+.enroll-doctor-section h2 {
+    margin-bottom: 20px;
+    color: #1A2C59;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* Enroll Container for form and video */
+.enroll-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Space out form and video */
+    flex-wrap: wrap; /* Ensure responsiveness */
+    gap: 20px; /* Space between form and video */
+}
+
+/* Form Styling */
+.enroll-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between the form elements */
+    width: 90%; /* Full width within the container */
+    max-width: 500px; /* Set a maximum width for the form */
+    flex: 1; /* Allow the form to take up available space */
+}
+
+/* Input and Select Styling */
+.enroll-doctor-section input,
+.enroll-doctor-section select {
+    width: 100%; /* Ensure the element takes full width */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #f9f9f9;
+}
+
+/* Focus Effect */
+.enroll-doctor-section input:focus,
+.enroll-doctor-section select:focus {
+    border-color: #85b4da;
+    box-shadow: 0 0 10px rgba(0, 168, 240, 0.5);
+    outline: none;
+}
+
+/* Submit Button Styling */
+.enroll-doctor-section button {
+    background-color: #85b4da;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Full width button */
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.enroll-doctor-section button:hover {
+    background-color: #007bb8;
+}
+
+/* Styling for Video */
+.enroll-video {
+    max-width: 300px; 
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.no-results {
+    display: none; /* Hidden by default */
+    color: #ff4d4d; /* Red color for the error message */
+    background-color: #ffe6e6; /* Light red background */
+    border: 1px solid #ff9999; /* Red border */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin: 20px;
+    font-family: 'Montserrat', sans-serif;
+}

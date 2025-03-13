@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome (for icons like trash) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/css_files/doctor_dashboard.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js_files/crypto-js.min.js"></script>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <video autoplay muted loop>
+            <source src="/assets/videos/carewell.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <ul>
+            <li><a href="/html_files/doctor_dashboard.html"><img src="/assets/gifs/dashboard.gif" alt="Dashboard Icon"> Dashboard</a></li>
+            <li><a href="#appointments"><img src="/assets/gifs/appointment.gif" alt="Appointments Icon"> Appointments</a></li>
+            <li><a href="#patient"><img src="/assets/gifs/docteam.gif" alt="Patients Icon"> Patients</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <h1 id="doctor-welcome">Welcome Dr. [Name]</h1>
+            <div class="user-info">
+                <img src="/assets/gifs/user.gif" alt="User Profile">
+                <button id="logout-button" class="logout-button">Log Out</button>
+            </div>
+        </div>        
+
+        <!-- Stats Section -->
+        <div class="stats">
+            <a href="#appointments" class="stat-card">
+                <h2 id="today-appointments-count">0</h2>   
+                <span>Appointments For The Day</span>
+            </a>            
+            <a href="#appointment-requests" class="stat-card">
+                <h2 id="appointment-requests-count">0</h2>
+                <span>Appointment Requests</span>
+            </a>            
+            <a href="#prescription-requests" class="stat-card">
+                <h2 id="prescription-pending-count">0</h2>
+                <span>Prescription Pending</span>
+            </a>                  
+        </div>
+
+        <!-- Today's Appointments and Upcoming Appointments (Centered) -->
+        <div id="appointments" class="section centered-section">
+            <div class="card appointment-card" id="todays-appointments">
+                <h2>Today's Appointments</h2>
+                <div class="appointment-list">
+                    <!-- Appointments will be dynamically generated here -->
+                </div>
+            </div>
+
+            <!-- Upcoming Appointments - Dynamically populated with upcoming accepted appointments -->
+            <div class="card appointment-card" id="upcoming-appointments">
+                <h2>Upcoming Appointments</h2>
+                <div class="appointment-list">
+                    <!-- Upcoming accepted appointments will be dynamically added here -->
+                </div>
+            </div>
+
+            <!-- Approved Prescriptions Section -->
+            <div class="card appointment-card" id="approved-prescriptions">
+                <h2>Prescriptions Approved</h2>
+                <div class="prescription-list">
+                    <!-- Approved prescriptions will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Appointment Requests -->
+        <div class="appointment-wrapper card" id="appointment-requests">
+            <h2>Appointment Requests</h2>
+            <div class="appointment-inner">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Type <span>&#x25B2;&#x25BC;</span></th>
+                            <th>Date <span>&#x25B2;&#x25BC;</span></th>
+                            <th>Time <span>&#x25B2;&#x25BC;</span></th>
+                            <th>Patient <span>&#x25B2;&#x25BC;</span></th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Appointment rows will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="no-appointments-message" style="display: none; text-align: center; margin-top: 10px;">
+                No appointment requests pending.
+            </p>
+        </div>
+
+        <!-- Prescription Requests -->
+        <div class="card" id="prescription-requests">
+            <h2>Prescription Requests</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th onclick="sortTable('prescription-requests', 0)">Patient Name <span>&#x25B2;&#x25BC;</span></th>
+                        <th onclick="sortTable('prescription-requests', 1)">Reason <span>&#x25B2;&#x25BC;</span></th>
+                        <th onclick="sortTable('prescription-requests', 2)">Medicine</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="prescription-tbody">
+                    <!-- Dynamic rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="chart-section">
+            <div class="chart-container card">
+                <h2>Patient Analysis</h2>
+                <canvas id="patientAnalysisChart"></canvas>
+            </div>
+
+            <div class="pie-chart-container card">
+                <h2>Online vs In-Person Patients</h2>
+                <canvas id="patientTypeChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Patient List Section -->
+        <div id="patient" class="patient-list">
+            <h2>Patient List</h2>
+            <div class="patient-container" id="patient-container">
+                <!-- Patient cards will be dynamically inserted here -->
+            </div>
+        </div>
+
+    <!-- Placeholder for Password Change Popup -->
+    <div id="popup-container"></div>
+
+    <!-- External JavaScript -->
+    <script src="/js_files/encryption.js"></script>
+    <script src="/js_files/doctor_dashboard.js"></script>
+    <script src="/js_files/appointment_doctor.js"></script>
+    <script src="/js_files/prescription_doctor.js"></script>
+    <script src="/js_files/doctor_patient_list.js"></script>
+    <script src="/js_files/access_control.js"></script> <!-- Load access control script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            checkAccess('doctor_dashboard');
+
+            // Logout button with SweetAlert confirmation
+            const logoutButton = document.getElementById('logout-button');
+            
+            if (logoutButton) {
+                logoutButton.addEventListener('click', function() {
+                    Swal.fire({
+                        title: 'Are you sure you want to log out?',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Yes, log out',
+                        cancelButtonText: 'Cancel',
+                        reverseButtons: true,
+                        confirmButtonColor: '#85b4da'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            localStorage.removeItem('loggedInDoctorId');
+                            localStorage.removeItem('userRole');
+                            window.location.href = '/html_files/frontpage.html';
+                        }
+                    });
+                });
+            } else {
+                console.error("Logout button not found!");
+            }
+
+            // Verify the existence of elements and log warnings if any are missing
+            const doctorWelcomeElement = document.getElementById('doctor-welcome');
+            if (!doctorWelcomeElement) {
+                console.warn("Element 'doctor-welcome' not found in the DOM.");
+            }
+
+            const appointmentRequestsCountElement = document.getElementById("appointment-requests-count");
+            if (!appointmentRequestsCountElement) {
+                console.warn("Element 'appointment-requests-count' not found in the DOM.");
+            }
+
+            const todayAppointmentsCountElement = document.getElementById("today-appointments-count");
+            if (!todayAppointmentsCountElement) {
+                console.warn("Element 'today-appointments-count' not found in the DOM.");
+            }
+        });
+    </script>
+
+    <!-- SweetAlert2 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

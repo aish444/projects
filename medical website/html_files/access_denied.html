@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Access Denied</title>
+    <style>
+        /* Full-page background video */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end; /* Align the button at the bottom */
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        /* Video settings */
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1; /* Behind the button */
+        }
+
+        /* Button styling */
+        .frontpage-button {
+            margin-bottom: 90px; 
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #ffffff;
+            background-color: #012656;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .frontpage-button:hover {
+            background-color: #5d8fc4;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="background-video">
+        <source src="/assets/videos/access_denied.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Button -->
+    <a href="/html_files/frontpage.html" class="frontpage-button">Go to Front Page</a>
+</body>
+</html>

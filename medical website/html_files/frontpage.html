@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Page</title>
+    <link rel="stylesheet" href="/css_files/frontpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="manifest" href="/json_files/manifest.json">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+    <!-- Header section -->
+    <header>
+        <img src="/assets/gifs/logo.gif" alt="Logo Photo">
+        <nav>
+            <ul>
+                <li><a href="/html_files/frontpage.html">Home</a></li>
+                <li><a href="#AboutUs">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="/html_files/login_page.html" class="login-btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <h1>Caring for you, every step of the way.</h1>
+        <p>Your well-being is our mission!</p>
+
+        <div class="video-placeholder" id="video-placeholder">
+            <video autoplay muted loop>
+                <source src="/assets/videos/fpanimated.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+    <!-- About us section -->
+    <section id="AboutUs" class="stats-section">
+        <h2>Our Numbers speak for themselves</h2>
+        <div class="stats">
+            <div class="stat-box">
+                <h3><span class="stat-num" data-target="94">0</span>%</h3>
+                <p>Appointments successfully booked through our portal.</p>
+            </div>
+            <div class="stat-box">
+                <h3><span class="stat-num" data-target="95">0</span>%</h3>
+                <p>Prescriptions delivered accurately and on time.</p>
+            </div>
+            <div class="stat-box">
+                <h3><span class="stat-num" data-target="92">0</span>%</h3>
+                <p>Emergency cases handled with immediate response.</p>
+            </div>
+            <div class="stat-box">
+                <h3><span class="stat-num" data-target="97">0</span>%</h3>
+                <p>Patients satisfied with their personalized care plans.</p>
+            </div>
+        </div>
+        <p class="intro-text">
+            Welcome to our clinic, where your health comes first—anytime, anywhere! With emergency care and easy
+            virtual visits, we're always here for you. Plus, we tailor our care just for you, making every visit
+            personal and stress-free.
+        </p>
+        <p class="mission-text">Your wellness is our mission, day or night!</p>
+    </section>
+
+    <!-- contact us section -->
+    <section id="contact" class="scroll-section">
+        <div class="contact">
+            <p>Contact Us</p>
+        </div>
+        <div class="intro-text">
+            <h1>We’re here to support your health journey.</h1>
+            <h1>Reach out anytime!</h1>
+        </div>
+        <div class="container">
+            <div class="box" id="box1">
+                <div class="icon"></div>
+                <h2>Ambulance</h2>
+                <p>111</p>
+                <p class="small-text">Call us for urgent medical assistance.</p>
+            </div>
+            <div class="box" id="box2">
+                <div class="icon"></div>
+                <h2>Clinic</h2>
+                <p>(230) 1234567</p>
+                <p class="small-text">Reach our main clinic for any appointment.</p>
+            </div>
+            <div class="box" id="box3">
+                <div class="icon"></div>
+                <h2>E-mail</h2>
+                <p>info@carewell.we</p>
+                <p class="small-text">Send us your queries or concerns here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section with Cards -->
+    <section id="faq" class="faq-section">
+        <h2 class="faq-title">Frequently Asked Questions</h2> <!-- Title placed inside the section -->
+        <div class="faq-cards">
+            <div class="faq-card">
+                <div class="question">How do I book an appointment?</div>
+                <div class="answer">Log in to your patient portal to book an in-person or telehealth consultation.
+                    Cancellations must be made 24 hours in advance.</div>
+            </div>
+            <div class="faq-card">
+                <div class="question">How can I request a prescription refill?</div>
+                <div class="answer">You can request a refill by logging into your patient portal and following the
+                    instructions under prescription requests.</div>
+            </div>
+            <div class="faq-card">
+                <div class="question">How do I access my medical records?</div>
+                <div class="answer">Your medical records are accessible through the patient portal. Log in to view your
+                    records.</div>
+            </div>
+            <div class="faq-card">
+                <div class="question">Is my personal health information secure?</div>
+                <div class="answer">Absolutely. We adhere to strict security protocols to protect all patient data and
+                    medical records.</div>
+            </div>
+            <div class="faq-card">
+                <div class="question">Where is CareWell Clinic located?</div>
+                <div class="answer">We are located at 10 Wellness Avenue, GoodHealth.</div>
+            </div>
+            <div class="faq-card">
+                <div class="question">What is your payment and billing policy?</div>
+                <div class="answer">We take all major credit cards, and we also offer payment plans to help you pay for your medical care.</div>
+            </div>
+            <div class="faq-card">
+                <div class="question">How do I need to pay for services?</div>
+                <div class="answer">We accept various payment methods. Please check with our billing department for
+                    details.</div>
+            </div>
+            <div class="faq-card">
+                <div class="question">How do you maintain confidentiality?</div>
+                <div class="answer">We have strict confidentiality measures in place, ensuring that your personal and
+                    health information remains secure at all times.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="container">
+            <div class="footer-left">
+                <p>Phone: (230) 123-4567</p>
+                <p>Email: info@carewellclinic.com</p>
+                <p>Location: 10 Wellness Avenue, GoodHealth.</p>
+            </div>
+            <div class="footer-center">
+                <p>Lab Hours: Mon-Fri: 8 AM - 5 PM</p>
+            </div>
+            <div class="footer-right">
+                <p>follow us</p>
+                <a href="https://facebook.com" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://x.com" target="_blank">
+                    <i class="fas fa-times"></i> <!-- Standard 'X' icon -->
+                </a>                
+                <a href="https://instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <p>&copy; 2024 CareWell Clinic. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('../js_files/service-worker.js').then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }).catch(error => {
+                    console.log('Service Worker registration failed:', error);
+                });
+            });
+        }
+    </script>
+
+
+    <script src="/js_files/frontpage.js"></script>
+    <script src="/js_files/initialisation.js"></script>
+    <script src="/js_files/crypto-js.min.js"></script>
+    <script src="/js_files/encryption.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - CareWell Clinic</title>
+    <style>
+        /* Basic styling for offline page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f5;
+            color: #333;
+            margin: 0;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            color: #0077b6;
+        }
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .retry-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #0077b6;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .retry-button:hover {
+            background-color: #005f8a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>You're Offline</h1>
+        <p>It seems you're not connected to the internet. Some features may be unavailable.</p>
+        <p>Please check your connection and try again.</p>
+        <button class="retry-button" onclick="location.reload()">Retry</button>
+    </div>
+</body>
+</html>

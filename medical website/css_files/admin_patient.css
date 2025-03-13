@@ -1,0 +1,328 @@
+/* General Styles */
+body {
+  background-color: #e3f2fd;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Search Bar - Improved Styling */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 40%; 
+  max-width: 600px; /* Ensure it doesn't get too wide */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 15px; /* Rounded corners */
+  font-size: 16px;
+  transition: all 0.3s ease; /* Smooth transition on focus */
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #00a8f0; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(0, 168, 240, 0.3); /* Soft glow effect */
+}
+
+/* Patient Cards */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 15px;
+  text-align: left;
+}
+
+.card h2 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+/* Button Styles */
+button {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Edit Button */
+button.edit {
+  background-color: #6ba8e9;
+  color: white;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+button.edit:hover {
+  background-color: #064991; /* Darker blue on hover */
+}
+
+/* Delete Button */
+button.delete {
+  background-color: #f44336;
+  color: white;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+button.delete:hover {
+  background-color: #d11313; /* Darker red on hover */
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  max-width: 600px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.modal-content label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.modal-content input,
+.modal-content select {
+  padding: 10px;
+  width: 100%;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Success Message */
+.success-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 1000;
+}
+
+/* Enrollment Form Styles */
+.enrollment-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 40px;
+  max-width: 800px; /* Ensure the entire wrapper has a max width */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Enrollment Wrapper */
+.enrollment-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 900px; 
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Enrollment Wrapper */
+.enrollment-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 900px; 
+  margin: 40px auto;
+  padding: 25px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Enrollment Form Container */
+.enrollment-container {
+  width: 70%; /* Allow form to take up 60% of the space */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Stack form and button */
+}
+
+/* Scrollable Section for Input Fields */
+.scrollable-form-group {
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 452px; /* Limit the maximum height */
+  padding-right: 10px; /* Add padding for a cleaner scroll */
+  flex-grow: 1; /* Allow the section to take available space */
+}
+
+/* Video Styling */
+.enroll-video {
+  width: 35%; /* Allow video to take up 35% of the space */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded edges for video */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+/* Form Header */
+.enrollment-container h2 {
+  margin-bottom: 20px;
+  color: #1A2C59;
+  text-align: center;
+}
+
+/* Input and Select Fields */
+.scrollable-form-group input[type="text"],
+.scrollable-form-group input[type="email"],
+.scrollable-form-group input[type="tel"],
+.scrollable-form-group input[type="date"],
+.scrollable-form-group select {
+  padding: 12px;
+  width: 100%;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Focus Style */
+.scrollable-form-group input[type="text"]:focus,
+.scrollable-form-group input[type="email"]:focus,
+.scrollable-form-group input[type="tel"]:focus,
+.scrollable-form-group input[type="date"]:focus,
+.scrollable-form-group select:focus {
+  border-color: #00a8f0; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(0, 168, 240, 0.3); /* Soft glow effect */
+  outline: none;
+}
+
+/* Enroll Button Styles */
+.enrollment-container button {
+  background-color: #6ba8e9; /* Green background */
+  color: white;
+  width: 40%;
+  align-self: center;
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 15px; /* Adds space between scrollable section and button */
+}
+
+/* Hover Effect for Button */
+.enrollment-container button:hover {
+  background-color: #064991; /* Darker green on hover */
+}
+
+
+/* Form Group Styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+  .enrollment-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .enrollment-container {
+    width: 100%; /* Full width for smaller screens */
+    max-height: 300px; 
+  }
+
+  .enroll-video {
+    width: 100%; /* Full width for video */
+    margin-top: 15px; /* Add spacing from form */
+  }
+
+  .enrollment-container input[type="text"],
+  .enrollment-container input[type="email"],
+  .enrollment-container input[type="tel"],
+  .enrollment-container input[type="date"],
+  .enrollment-container select,
+  .enrollment-container button {
+    font-size: 14px; 
+  }
+}
+
+
+.no-results {
+  display: none; /* Hidden by default */
+  color: #ff4d4d; /* Red color for the error message */
+  background-color: #ffe6e6; /* Light red background */
+  border: 1px solid #ff9999; /* Red border */
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  margin: 20px;
+  font-family: 'Montserrat', sans-serif;
+}

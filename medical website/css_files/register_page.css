@@ -1,0 +1,214 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Montserrat;
+    color: #333;
+}
+
+/* Fullscreen background video */
+#backgroundVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.speaker {
+    position: absolute;
+    padding: 20px;
+    color: #333;
+    border-radius: 15px;
+    width: 320px;
+    top: 275px;
+    left: -290px;
+    font-family: Montserrat;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 400ms ease;
+}
+
+.bubble {
+    position: relative;
+    padding: 20px;
+    color: #333;
+    border-radius: 15px;
+    margin-left: 20px;
+    width: 320px;
+    left: 35%;
+    top: 80px;
+    font-family: Montserrat;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 0.9em;
+    transition: all 400ms ease;
+}
+
+/* Hide layers 2, 3, and 4 initially */
+#layer2, #layer3, #layer4 {
+    display: none;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 280px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select {
+    text-indent: 5px;
+    border: none;
+    font-size: 0.9em;
+    font-family: Montserrat;
+    border-bottom: solid 2px #004080;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    transition: all 400ms ease;
+    background: none;
+}
+
+input::placeholder, select option {
+    color: #333;
+    font-style: normal;
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="tel"]:focus, 
+input[type="date"]:focus, 
+select:focus {
+    border-color: #004080;
+    outline: none;
+    font-style: normal;
+}
+
+input[type="text"]:not(:placeholder-shown),
+input[type="email"]:not(:placeholder-shown),
+input[type="tel"]:not(:placeholder-shown),
+input[type="date"]:not(:placeholder-shown),
+select:not([value=""]) {
+    background: none;
+    font-style: normal;
+}
+
+.error-message {
+    color: #b30000;
+    font-size: 0.75em;
+    font-family: Montserrat;
+    display: none;
+    margin-top: 5px;
+}
+
+.btn-container {
+    position: absolute;
+    top: 700px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-container.single-button {
+    justify-content: center;
+    transform: translateX(-50%);
+}
+
+.btn {
+    cursor: pointer;
+    border: 0;
+    padding: 10px;
+    font-family: Montserrat;
+    background: #ffffff;
+    color: #004080;
+    border-radius: 25px;
+    width: 100px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background: #004080;
+    color: #ffffff;
+}
+
+.btn.finish {
+    background: #ffffff;
+    color: #004080;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn.finish:hover {
+    background: #004080;
+    color: #ffffff;
+}
+
+/* New button container for Layer 4 */
+.btn-container {
+    position: absolute;
+    top: 700px; 
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px; /* Space between the buttons */
+    justify-content: center;
+}
+
+
+.video-wrapper {
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
+    width: 270px;
+    height: 370px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcomeVideo {
+    width: 250px;
+    height: 350px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+#btn1-container {
+    display: flex;
+}
+
+#btn2-container, #btn3-container, #btn4-container {
+    display: none;
+}
+
+.summary-box {
+    margin-top: -20px;
+    color: #333;
+    background-color: transparent;
+    border-radius: 15px;
+    transition: all 400ms ease;
+}

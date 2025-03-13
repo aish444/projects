@@ -1,0 +1,150 @@
+{
+    "name": "CareWell Medical Clinic",
+    "short_name": "CareWell",
+    "start_url": "/html_files/frontpage.html",
+    "display": "standalone",
+    "background_color": "#f0f4f8",
+    "theme_color": "#0f2c40",
+    "description": "Progressive Web App for managing healthcare services, including dashboards for Admin, Doctor, and Patient roles.",
+    "icons": [
+        {
+            "src": "/assets/images/logo-icon",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/ambulance-icon",
+            "sizes": "283x191",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/email-icon",
+            "sizes": "500x500",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/phone-icon",
+            "sizes": "480x480",
+            "type": "image/png"
+        }
+    ],
+    "scope": "/",
+    "shortcuts": [
+        {
+            "name": "Admin Dashboard",
+            "url": "/html_files/admin_dashboard.html",
+            "icons": [
+                {
+                    "src": "/assets/gifs/admin.gif",
+                    "sizes": "400x300",
+                    "type": "image/gif"
+                }
+            ]
+        },
+        {
+            "name": "Doctor Dashboard",
+            "url": "/html_files/doctor_dashboard.html",
+            "icons": [
+                {
+                    "src": "/assets/gifs/doctor.gif",
+                    "sizes": "800x600",
+                    "type": "image/gif"
+                }
+            ]
+        },
+        {
+            "name": "Patient Dashboard",
+            "url": "/html_files/patient_dashboard.html",
+            "icons": [
+                {
+                    "src": "/assets/gifs/patient.gif",
+                    "sizes": "884x646",
+                    "type": "image/gif"
+                }
+            ]
+        },
+        {
+            "name": "Patient Records",
+            "url": "/html_files/admin_patient.html"
+        },
+        {
+            "name": "Doctor Patient Details",
+            "url": "/html_files/doctor_patient_details.html"
+        }
+    ],
+    "offline_support": true,
+    "appcache": [
+        "./",
+        "./json_files/admin.json",
+        "./json_files/doctors.json",
+        "./json_files/medicines.json",
+        "./json_files/patients.json",
+        "./html_files/access_denied.html",
+        "./html_files/admin_dashboard.html",
+        "./html_files/admin_patient.html",
+        "./html_files/doctor_dashboard.html",
+        "./html_files/doctor_patient_details.html",
+        "./html_files/frontpage.html",
+        "./html_files/login_page.html",
+        "./html_files/offline.html",
+        "./html_files/patient_dashboard.html",
+        "./html_files/patient_info.html",
+        "./html_files/register_page.html",
+        "./css_files/admin_dashboard.css",
+        "./css_files/admin_patient.css",
+        "./css_files/doctor_dashboard.css",
+        "./css_files/doctor_patient_details.css",
+        "./css_files/frontpage.css",
+        "./css_files/login.css",
+        "./css_files/patient_dashboard.css",
+        "./css_files/patient_info.css",
+        "./css_files/register_page.css",
+        "./js_files/access_control.js",
+        "./js_files/admin_login.js",
+        "./js_files/admin_dashboard.js",
+        "./js_files/admin_patient.js",
+        "./js_files/appointment_doctor.js",
+        "./js_files/appointment.js",
+        "./js_files/crypto-js.min.js",
+        "./js_files/doctor_login.js",
+        "./js_files/doctor_patient_list.js",
+        "./js_files/encryption.js",
+        "./js_files/frontpage.js",
+        "./js_files/initialisation.js",
+        "./js_files/patient_dashboard.js",
+        "./js_files/patient_info.js",
+        "./js_files/patient_login.js",
+        "./js_files/patient_medical_notes.js",
+        "./js_files/prescription_doctor.js",
+        "./js_files/prescription.js",
+        "./js_files/register_page.js",
+        "./assets/videos/fanimated.mp4",
+        "./assets/videos/access_denied.mp4",
+        "./assets/videos/bodyvid.mp4",
+        "./assets/videos/carewell.mp4",
+        "./assets/videos/doctor_error.mp4",
+        "./assets/videos/doctor_good.mp4",
+        "./assets/videos/doctor_takingnotes.mp4",
+        "./assets/videos/doctor_welcome.mp4",
+        "./assets/videos/enroldoc.mp4",
+        "./assets/videos/registervid.mp4",
+        "./assets/gifs/admin.gif",
+        "./assets/gifs/appointment.gif",
+        "./assets/gifs/dashboard.gif",
+        "./assets/gifs/docprof.gif",
+        "./assets/gifs/docteam.gif",
+        "./assets/gifs/doctor.gif",
+        "./assets/gifs/enrol.gif",
+        "./assets/gifs/history.gif",
+        "./assets/gifs/logo.gif",
+        "./assets/gifs/patient.gif",
+        "./assets/gifs/patientprof.gif",
+        "./assets/gifs/prescription.gif",
+        "./assets/gifs/user.gif",
+        "./assets/images/admindbbg.jpeg",
+        "./assets/images/ambulance-icon.png",
+        "./assets/images/email-icon.png",
+        "./assets/images/phone-icon.png",
+        "./favicon.ico"
+    ]
+}

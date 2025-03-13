@@ -1,0 +1,207 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #002a5c, #004080); /* Default gradient background */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: background 0.6s ease-in-out, opacity 0.6s ease-in-out; /* Smooth transition for background and opacity */
+}
+
+.fade-out {
+    opacity: 0; /* Class to fade out body */
+}
+
+/* Tab Content Styling */
+.tab-content {
+    display: none;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    flex-direction: row;
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out; /* Smooth fade effect */
+}
+
+/* Login Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+/* Login Box */
+.login-box {
+    display: flex;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    transition: opacity 0.6s ease-in-out; /* Fade effect for the login box */
+}
+
+/* Left Box */
+.left-box {
+    flex: 1;
+    padding: 50px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: opacity 0.6s ease-in-out; /* Fade effect */
+}
+
+.left-box h2, .left-box p {
+    transition: opacity 0.6s ease-in-out; /* Fade effect */
+}
+
+.left-box h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.left-box p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #888;
+}
+
+/* Input Fields */
+.input-box {
+    margin-bottom: 20px;
+    position: relative; /* For positioning the toggle password icon */
+}
+
+.input-box input {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.input-box input:focus {
+    border-color: #007bff;
+}
+
+/* Password Toggle Icon */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #888;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px; /* Increased margin to move the button further down */
+    transition: opacity 0.6s ease-in-out; /* Fade effect */
+}
+
+/* Tab Button and Sign In Button (Same Style) */
+.tab-btn {
+    padding: 10px 30px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, opacity 0.6s ease-in-out; /* Fade effect */
+    text-decoration: none;
+    color: #007bff;
+}
+
+.tab-btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Extra Buttons under the image */
+.extra-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    transition: opacity 0.6s ease-in-out; /* Fade effect */
+}
+
+/* Right Box */
+.right-box {
+    flex: 1;
+    padding: 50px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: opacity 0.6s ease-in-out; /* Fade effect */
+}
+
+.right-box h2, .right-box p {
+    transition: opacity 0.6s ease-in-out; /* Fade effect */
+}
+
+/* Adjusted GIF width */
+.welcome-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out; /* Fade effect for images */
+}
+
+/* Style for the REGISTER link */
+.register-link {
+    text-decoration: none;
+    color: #007bff; 
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.register-link:hover {
+    color: #0056b3; 
+}
+
+/* Lower the register prompt */
+.register-prompt {
+    margin-top: 50px; 
+    text-align: center;
+}
+
+/* Style for buttons (Sign In and REGISTER here) */
+.tab-btn {
+    padding: 10px 30px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #007bff;
+    transition: background-color 0.3s ease;
+}
+
+.tab-btn:hover {
+    background-color: #007bff;
+    color: white;
+}

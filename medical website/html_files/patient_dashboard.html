@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carewell Dashboard</title>
+  <link rel="stylesheet" href="/css_files/patient_dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Flatpickr CSS for the calendar -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="/js_files/crypto-js.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="flex h-screen bg-gray-100">
+    <!-- Vertical Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <video autoplay muted loop>
+        <source src="/assets/videos/carewell.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <nav>
+        <a href="#dashboard" class="active"><i class="fas fa-home"></i> Dashboard</a>
+        <a href="#appointments-section"><i class="fas fa-calendar-check"></i> Appointments</a>
+        <a href="#prescriptions-section"><i class="fas fa-prescription-bottle-alt"></i> Prescriptions</a>
+        <a href="#history-section"><i class="fas fa-history"></i> History</a>
+        <a href="/html_files/patient_info.html"><i class="fas fa-user"></i> Profile</a>
+      </nav>
+    </aside>
+
+    <!-- Hamburger for Mobile -->
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content" id="dashboard">
+      <header class="header">
+          <h1>Welcome back, <span id="patientName"></span></h1>
+          <div class="user-info">
+              <img src="/assets/gifs/patientprof.gif" alt="Patient Profile" class="profile-img">
+              <button id="logout-button" class="logout-button">Log Out</button>
+          </div>
+      </header>    
+
+      <!-- Grid Container for All Rows -->
+      <div class="grid-container">
+        
+        <!-- First Row: Your Data and Visit Frequency -->
+        <div class="row" id="profile">
+          <section class="card your-data">
+            <h3>Your Data</h3>
+            <div class="body-data">
+              <div class="body-placeholder">
+                <video class="your-data-video" autoplay muted loop>
+                  <source src="/assets/videos/bodyvid.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="user-info-metrics">
+                <div class="metric">
+                  <h4>Average Heart Rate</h4>
+                  <p id="patientHeartRate">Loading...</p>
+                </div>
+                <div class="metric">
+                  <h4>Height</h4>
+                  <p id="patientHeight">Loading...</p>
+                </div>
+                <div class="metric">
+                  <h4>Weight</h4>
+                  <p id="patientWeight">Loading...</p>
+                </div>
+                <div class="metric">
+                  <h4>Blood Type</h4>
+                  <p id="patientBloodType">Loading...</p>
+                </div>
+              </div>                
+            </div>
+          </section>
+
+          <!-- Visit Frequency Graph -->
+          <section class="card visit-frequency">
+            <h3>Visit Frequency per Year</h3>
+            <canvas id="visitChart"></canvas>
+          </section>
+        </div>
+
+        <!-- Second Row: Request an Appointment Form Section + Appointments Section -->
+        <div class="row" id="appointments-section">
+          <!-- Request an Appointment Form Section -->
+          <section class="card request-appointment">
+            <h3><i class="fas fa-calendar-check"></i> Request an Appointment</h3>
+            <form id="appointmentForm">
+              <div class="input-row">
+                <div class="input-group">
+                  <label for="appointmentType"><i class="fas fa-clinic-medical"></i> Appointment Type</label>
+                  <select id="appointmentType" name="appointmentType" required>
+                    <option value="" disabled selected>-- Select Type --</option>
+                    <option value="in-person">In-person Appointment</option>
+                    <option value="online">Online Consultation</option>
+                  </select>
+                </div>
+                <div class="input-group">
+                  <label for="doctor"><i class="fas fa-user-md"></i> Choose Doctor</label>
+                  <select id="doctor" name="doctor" required>
+                    <option value="" disabled selected>-- Select Doctor --</option>
+                    <!-- Doctor options populated dynamically -->
+                  </select>
+                </div>
+              </div>
+              <div class="input-row">
+                <div class="input-group">
+                  <label for="appointmentDate"><i class="fas fa-calendar-alt"></i> Appointment Date</label>
+                  <input type="text" id="appointmentDate" name="appointmentDate" placeholder="Select a date" required>
+                </div>
+                <div class="input-group">
+                  <label for="timeSlot"><i class="fas fa-clock"></i> Time Slot</label>
+                  <select id="timeSlot" name="timeSlot" required>
+                    <option value="" disabled selected>-- Select Time --</option>
+                    <!-- Time slots populated dynamically -->
+                  </select>
+                </div>
+              </div>
+              <div class="button">
+                <button type="submit"><i class="fas fa-paper-plane"></i> Submit</button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Appointments Section -->
+          <section class="card appointments-section">
+            <h3>Appointments</h3>
+            <div class="appointments">
+              <!-- Appointment cards populated dynamically -->
+            </div>
+          </section>
+        </div>
+
+        <!-- Third Row: Prescriptions and Prescription Request -->
+        <div class="row" id="prescriptions-section">
+          <section class="card prescriptions-section">
+            <h3>My Prescriptions</h3>
+            <div class="prescriptions" id="prescriptions-container">
+              <!-- Prescriptions populated dynamically -->
+            </div>
+          </section>
+
+          <!-- Request Prescription Form Section -->
+          <section class="card request-prescription">
+            <h3><i class="fas fa-prescription"></i> Request a Prescription</h3>
+            <form id="prescriptionForm">
+              <div class="input-row">
+                <div class="input-group">
+                  <label for="reason"><i class="fas fa-notes-medical"></i> Reason for Request</label>
+                  <select id="reason" name="reason" required>
+                    <option value="" disabled selected>-- Select Reason --</option>
+                    <!-- Reason options populated dynamically by JavaScript -->
+                  </select>
+                </div>
+              </div>
+              <div class="input-row">
+                <div class="input-group">
+                  <label for="prescription-name"><i class="fas fa-user"></i> Prescription Name</label>
+                  <select id="prescription-name" name="prescription-name" required>
+                    <option value="" disabled selected>-- Select Prescription --</option>
+                    <!-- Options populated dynamically by JavaScript -->
+                  </select>                  
+                </div>
+              </div>
+              <div class="input-row">
+                <div class="input-group">
+                  <label for="doctor-prescription"><i class="fas fa-user-md"></i> Choose Doctor</label>
+                  <select id="doctor-prescription" name="doctor-prescription" required>
+                    <option value="" disabled selected>-- Select Doctor --</option>
+                    <!-- Doctor options populated dynamically -->
+                  </select>
+                </div>
+              </div>
+              <div class="button">
+                <button type="submit"><i class="fas fa-paper-plane"></i> Submit</button>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <!-- Fourth Row: Medical Notes and My History -->
+        <div class="row" id="history-section">
+          <!-- Medical Notes Section -->
+          <section class="card medical-notes-section">
+            <h3>Medical Notes</h3>
+            <div class="notes">
+              <!-- Medical notes populated dynamically -->
+            </div>
+          </section>
+
+          <!-- My History Section -->
+          <section class="card my-history-section">
+            <h3>My History</h3>
+            <div class="history-timeline">
+                <!-- History items populated dynamically -->
+            </div>
+        </section>        
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Flatpickr JavaScript for the calendar -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="/js_files/encryption.js"></script>
+  <script src="/js_files/patient_dashboard.js"></script>
+  <script src="/js_files/appointment.js"></script>
+  <script src="/js_files/prescription.js"></script>
+  <script src="/js_files/patient_medical_notes.js"></script>
+  <script src="/js_files/access_control.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async function() {
+      try {
+        console.log("Page loaded. Initializing database...");
+        
+        // Open the IndexedDB database
+        await openDatabase(); // Ensure the database is open
+        console.log("Database opened successfully.");
+  
+        // Check user access
+        checkAccess('patient_dashboard');
+        console.log("Access check completed.");
+  
+        // Display appointments on page load
+        displayAppointments(); // Call displayAppointments here to load appointments on page load
+        console.log("Attempting to display appointments...");
+  
+        // Logout button functionality with SweetAlert confirmation
+        const logoutButton = document.getElementById('logout-button');
+        if (logoutButton) {
+          logoutButton.addEventListener('click', function() {
+            Swal.fire({
+              title: 'Are you sure you want to log out?',
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonText: 'Yes, log out',
+              cancelButtonText: 'Cancel',
+              reverseButtons: true,
+              confirmButtonColor: '#85b4da' // Custom color for "Yes, log out" button
+            }).then((result) => {
+              if (result.isConfirmed) {
+                // Clear local storage and redirect to front page
+                localStorage.removeItem('loggedInPatientId');
+                localStorage.removeItem('userRole');
+                window.location.href = 'frontpage.html';
+              }
+            });
+          });
+        } else {
+          console.error("Logout button not found!");
+        }
+      } catch (error) {
+        console.error("Error initializing appointment module:", error);
+      }
+    });
+  
+    // Define the function to open the IndexedDB database
+    async function openDatabase() {
+      return new Promise((resolve, reject) => {
+        const request = indexedDB.open("CareWellClinicDB", 1);
+  
+        request.onsuccess = (event) => {
+          db = event.target.result; // Assign the result to the global db variable
+          console.log("Database successfully opened:", db);
+          resolve();
+        };
+        
+        request.onerror = (event) => {
+          console.error("Error opening CareWellClinicDB:", event);
+          reject("Error opening CareWellClinicDB");
+        };
+        
+        request.onupgradeneeded = (event) => {
+          db = event.target.result;
+          console.log("Upgrading database...");
+          // Create object stores if they don't exist
+          if (!db.objectStoreNames.contains("appointments")) {
+            db.createObjectStore("appointments", { keyPath: "id", autoIncrement: true });
+            console.log("Created 'appointments' object store.");
+          }
+          if (!db.objectStoreNames.contains("doctors")) {
+            db.createObjectStore("doctors", { keyPath: "id", autoIncrement: true });
+            console.log("Created 'doctors' object store.");
+          }
+          if (!db.objectStoreNames.contains("patients")) {
+            db.createObjectStore("patients", { keyPath: "id", autoIncrement: true });
+            console.log("Created 'patients' object store.");
+          }
+        };
+      });
+    }
+  
+    // Sample displayAppointments function with added logs for troubleshooting
+    async function displayAppointments(patient) {
+    console.log("Displaying appointments...");
+
+    const appointmentSection = document.querySelector(".appointments");
+    if (!appointmentSection) {
+      console.error("Could not find '.appointments' element in DOM.");
+      return;
+    }
+
+    appointmentSection.innerHTML = ""; // Clear existing cards
+
+    try {
+      // If patient data is not passed, retrieve it
+      if (!patient) {
+        patient = await getLoggedInPatient();
+      }
+
+      const transaction = db.transaction("appointments", "readonly");
+      const store = transaction.objectStore("appointments");
+
+      store.getAll().onsuccess = async (event) => {
+        const appointments = event.target.result.filter(
+          (appointment) => appointment.patient_id === patient.id
+        );
+        console.log("Fetched appointments for patient:", appointments);
+
+        if (appointments.length === 0) {
+          appointmentSection.innerHTML = "<p>No appointments scheduled.</p>";
+        } else {
+          for (const appointment of appointments) {
+            let doctorName = "Doctor Not Found";
+
+            if (appointment.doctor_id) {
+              const doctorTransaction = db.transaction("doctors", "readonly");
+              const doctorStore = doctorTransaction.objectStore("doctors");
+              const doctorRequest = doctorStore.get(Number(appointment.doctor_id));
+
+              doctorName = await new Promise((resolve) => {
+                doctorRequest.onsuccess = (event) => {
+                  const doctor = event.target.result;
+                  resolve(doctor ? `Dr. ${doctor.firstname} ${doctor.lastname}` : "Doctor Not Found");
+                };
+                doctorRequest.onerror = () => resolve("Doctor Not Found");
+              });
+            }
+
+            // Create the card with the structure matching the CSS classes
+            const card = document.createElement("div");
+            card.className = "appointment"; // Apply the 'appointment' class for styling
+            card.innerHTML = `
+              <p><strong>Type:</strong> ${appointment.appointment_type}</p>
+              <p><strong>Doctor:</strong> ${doctorName}</p>
+              <p><strong>Time:</strong> ${appointment.appointment_time}</p>
+              <p><strong>Date:</strong> ${appointment.appointment_date}</p>
+              <p><strong>Status:</strong> ${appointment.status}</p>
+            `;
+
+            // Append the card to the appointment section
+            appointmentSection.appendChild(card);
+          }
+        }
+      };
+    } catch (error) {
+      console.error("Error displaying appointments:", error);
+      appointmentSection.innerHTML = "<p>Error loading appointments.</p>";
+    }
+  }
+
+  
+    // Define the function to retrieve logged-in patient information
+    async function getLoggedInPatient() {
+      const firstName = localStorage.getItem("loggedInPatientFirstName");
+      const lastName = localStorage.getItem("loggedInPatientLastName");
+  
+      console.log("Retrieving logged-in patient:", firstName, lastName);
+  
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction("patients", "readonly");
+        const store = transaction.objectStore("patients");
+        const request = store.openCursor();
+  
+        request.onsuccess = (event) => {
+          const cursor = event.target.result;
+          if (cursor) {
+            const patient = cursor.value;
+            if (patient.firstname === firstName && patient.lastname === lastName) {
+              console.log("Patient found:", patient);
+              resolve(patient);
+            } else {
+              cursor.continue();
+            }
+          } else {
+            console.warn("Logged-in patient not found in database.");
+            reject("Logged-in patient not found");
+          }
+        };
+        request.onerror = () => reject("Error retrieving patient data");
+      });
+    }
+  </script>
+  
+
+</body>
+</html>

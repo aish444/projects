@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard & Patient Records</title>
+    <link rel="stylesheet" href="/css_files/admin_dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js_files/crypto-js.min.js"></script> <!-- Ensure this path is correct -->
+    <!-- Include SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <video autoplay muted loop>
+                <source src="/assets/videos/carewell.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="content">
+                <nav>
+                    <ul class="nav-links">
+                        <li>
+                            <a href="#">
+                                <span class="icon"><img src="/assets/gifs/dashboard.gif" alt="Home Icon"></span>
+                                <span class="nav-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#doclist">
+                                <span class="icon"><img src="/assets/gifs/docteam.gif" alt="Appointments Icon"></span>
+                                <span class="nav-text">Doctors</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#doc-enroll">
+                                <span class="icon"><img src="/assets/gifs/enrol.gif" alt="Enroll Icon"></span>
+                                <span class="nav-text">Enroll Doctors</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/html_files/admin_patient.html">
+                                <span class="icon"><img src="/assets/gifs/docteam.gif" alt="Patient Icon"></span>
+                                <span class="nav-text">Patients</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header Section -->
+            <header class="header">
+                <h1 class="welcome-message">Welcome Admin</h1>
+                <div class="profile-info">
+                    <img src="/assets/gifs/user.gif" alt="Admin Profile Picture" class="profile-img">
+                    <button id="logout-button" class="logout-button">Log Out</button>
+                </div>
+            </header>
+            
+            <!-- Stats Section -->
+            <section id="Report" class="stats-section">
+                <h2>Statistical Reports</h2>
+                <div class="stats">
+                    <div class="stat-box">
+                        <h3><span class="stat-num" data-target="1195"></span>$</h3>
+                        <p>Revenue generated</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3><span class="stat-num patient-count" data-target="0"></span></h3>
+                        <p>Patients enrolled</p>
+                    </div>                    
+                    <div class="stat-box">
+                        <h3><span class="stat-num doctor-count">0</span></h3>
+                        <p>Doctors enrolled</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts-section">
+                <div class="charts-container">
+                    <div class="chart-box">
+                        <h3>Gender Distribution Chart For Doctors</h3>
+                        <canvas id="genderChart"></canvas>
+                    </div>
+                    <div class="chart-box">
+                        <h3>Doctors Availability</h3>
+                        <canvas id="doctorsChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Doctor List Section -->
+    <section id="doclist" class="doctor-list-section">
+        <h2>Our Doctors</h2>
+        <input
+            type="text"
+            id="doctorSearch"
+            placeholder="Search for a doctor by name..."
+            class="search-bar"
+        />
+        <div id="no-results-message" class="no-results" style="display: none;">No doctors found matching your search.</div>
+        <div id="doctor-list" class="doctor-list"></div>
+    </section>
+
+    <!-- Enroll New Doctor Section -->
+    <section id="doc-enroll" class="enroll-doctor-section">
+        <h2>Enroll New Doctor</h2>
+        <div class="enroll-container">
+            <form id="enrollForm">
+                <input type="text" id="newFirstName" placeholder="First Name" required autocomplete="off" pattern="[A-Za-z\s]+" aria-label="First Name" />
+                <input type="text" id="newLastName" placeholder="Last Name" required autocomplete="off" pattern="[A-Za-z\s]+" aria-label="Last Name" />
+                <input type="email" id="newEmail" placeholder="Email" required autocomplete="off" aria-label="Email" />
+                <select id="newGender" required aria-label="Select Gender">
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <input type="text" id="newAddress" placeholder="Address" required autocomplete="off" aria-label="Address" />
+                <input type="text" id="newTelephone" placeholder="Telephone" required autocomplete="off" pattern="\d{3}-\d{3}-\d{4}" aria-label="Telephone Number (e.g., 123-456-7890)" />
+                <button type="submit">Enroll Doctor</button>
+            </form>
+            <video class="enroll-video" autoplay muted loop>
+                <source src="/assets/videos/enroldoc.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+    
+    <!-- Edit Doctor Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Edit Doctor Details</h2>
+            <form id="editForm">
+                <input type="hidden" id="editDoctorId" />
+                <label for="editFirstName">First Name:</label>
+                <input type="text" id="editFirstName" required autocomplete="off" />
+                <label for="editLastName">Last Name:</label>
+                <input type="text" id="editLastName" required autocomplete="off" />
+                <label for="editEmail">Email:</label>
+                <input type="email" id="editEmail" required autocomplete="off" />
+                <label for="editAddress">Address:</label>
+                <input type="text" id="editAddress" required autocomplete="off" />
+                <label for="editTelephone">Telephone:</label>
+                <input type="text" id="editTelephone" required autocomplete="off" />
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SweetAlert2 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Place JavaScript imports at the bottom -->
+    <script src="/js_files/encryption.js"></script>
+    <script src="/js_files/admin_dashboard.js"></script>
+    <script src="/js_files/access_control.js"></script> <!-- Add access control script here -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            checkAccess('admin_dashboard'); // Run access check for the admin dashboard
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById('enrollForm');
+            
+            if (form) {
+                console.log("Form found:", form); // Should appear in the console
+                
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    console.log("Form submit event triggered"); // Should appear on form submission
+                });
+            } else {
+                console.error("Form not found!");
+            }
+
+            // Logout button with SweetAlert confirmation
+            const logoutButton = document.getElementById('logout-button');
+            
+            if (logoutButton) {
+                logoutButton.addEventListener('click', function() {
+                    Swal.fire({
+                        title: 'Are you sure you want to log out?',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Yes, log out',
+                        cancelButtonText: 'Cancel',
+                        reverseButtons: true,
+                        confirmButtonColor: '#85b4da'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Clear local storage and redirect to front page
+                            localStorage.removeItem('loggedInAdmin');
+                            localStorage.removeItem('userRole');
+                            window.location.href = 'frontpage.html';
+                        }
+                    });
+                });
+            } else {
+                console.error("Logout button not found!");
+            }
+        });
+    </script>
+ 
+</body>
+</html>
