@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .total-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .remove-button {
+      background-color: #500c36;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .remove-button:hover {
+      background-color: #d32f2f;
+    }
+
+    .back-button {
+      padding: 10px 20px;
+      background-color: #500c36;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <header class="header-with-bg">
+    <nav>
+      <ul>
+        <li><a href="main.html" class="cta-button">Home</a></li>
+        <li><a href="book.xml" class="cta-button">Books</a></li>
+        <li><a href="aboutus.html" class="cta-button">About Us</a></li>
+        <li><a href="contactus.html" class="cta-button">Contact us</a></li>
+        <li><button class="cta-button"><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+    <h1>Your Cart</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Cart Items</h2>
+      <div id="cartItems">
+        <!-- Cart items will be dynamically added here -->
+      </div>
+    </section>
+    
+    <section>
+      <h2>Total</h2>
+      <div class="total-container">
+        <div id="cartTotal">
+          <!-- Cart total will be dynamically added here -->
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Bookworm's Haven. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Retrieve cart items from localStorage
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+      const cartItemsContainer = document.getElementById('cartItems');
+      const cartTotalContainer = document.getElementById('cartTotal');
+
+      let total = 0;
+
+      // Function to update the cart display
+      function updateCartDisplay() {
+        cartItemsContainer.innerHTML = '';
+        total = 0;
+
+        cartItems.forEach((item, index) => {
+          const itemDiv = document.createElement('div');
+          itemDiv.innerHTML = `
+            <p><strong>${item.name}</strong></p>
+            <p>Price: ${item.price}</p>
+            <p>Quantity: ${item.quantity}</p>
+            <button class="remove-button" data-index="${index}">Remove</button>
+            <hr>
+          `;
+          cartItemsContainer.appendChild(itemDiv);
+
+          // Calculate total
+          total += parseFloat(item.price.replace('$', '')) * item.quantity;
+        });
+
+        // Display total
+        cartTotalContainer.innerHTML = `
+          <h3>Total: $${total.toFixed(2)}</h3>
+        `;
+
+        // Add event listeners for remove buttons
+        const removeButtons = document.querySelectorAll('.remove-button');
+        removeButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const index = this.getAttribute('data-index');
+            cartItems.splice(index, 1);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            updateCartDisplay();
+          });
+        });
+      }
+
+      // Initial display update
+      updateCartDisplay();
+    });
+
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</body>
+</html>

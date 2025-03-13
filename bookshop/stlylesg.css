@@ -1,0 +1,306 @@
+/* Style.css */
+
+/* General Styles */
+body {
+    font-family: Georgia, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f0f7; /* Pale Pink */
+    color: #4d3c4f; /* Darker Purple */
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #e6d0e2;
+    padding: 10px;
+    text-align:left;
+  }
+  
+  header h1 {
+    margin-left: 0;
+    color: #4d3c4f; /* Darker Purple */
+  }
+  
+  
+  
+  /* Navigation Styles */
+  nav {
+    background-color: #d4b5d8; /* Pale Purple */
+    padding: 10px;
+    text-align: center;
+  }
+  
+  nav a {
+    color: #4d3c4f; /* Darker Purple */
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  nav a:hover {
+    color: #31273c; /* Darker Shade of Purple */
+  }
+  
+  /* Main Content Styles */
+  main {
+    padding: 20px;
+  }
+  
+  section {
+    background-color: #f0e6f0; /* Lighter Pale Pink */
+    padding: 20px;
+    margin-bottom: 20px;
+   
+  }
+  
+  section h2 {
+    color: #4d3c4f; /* Darker Purple */
+  }
+  
+  /* Book Image Styles */
+  .book-image {
+    display: block;
+    margin: 20px auto;
+    max-width: 200px;
+    height: auto;
+    border: 1px solid #d4b5d8; /* Pale Purple */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  /* Button Styles */
+  .cta-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #d4b5d8; /* Pale Purple */
+    color: #4d3c4f; /* Darker Purple */
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  
+  .cta-button:hover {
+    background-color: #c79ed0; /* Slightly Darker Pale Purple */
+  }
+  .header-with-bg {
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    height: 50vh;
+    width: 100%;  /* Adjust the height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    padding:0
+   
+  }
+  .header-with-bg nav a {
+    color: white;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    display: inline-block; /* change from block to inline-block */
+    text-align: center;
+  }
+  
+   
+  .header-with-bg h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #4d3c4f;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .header-with-bg nav ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: space between;
+    align-items: center;
+  }
+  
+  .header-with-bg nav li {
+    margin-right: 20px; /* add some space between menu items */
+  }
+  
+  
+  
+  /* Footer Styles */
+  footer {
+    background-color: #e6d0e2; /* Slightly Darker Pale Pink */
+    padding: 10px;
+    text-align: center;
+    color: #4d3c4f; /* Darker Purple */
+  }
+  /* Add the following styles to your CSS file */
+  
+  .section-with-slideshow {
+    position: relative;
+    height: 0px;
+  }
+  
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Display 3 books in a row */
+    grid-gap: 10px;
+  }
+  
+  .book {
+    width: 80%;
+    height: 300px; /* Set the book height */
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 1; /* Initially hide all books */
+   
+  }
+  
+  .active {
+    opacity: 1;
+    transform: scale(1.2); /* Scale the active book slightly */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .book-grid:hover .book:not(.active) {
+    opacity: 0.5; /* Dim the non-active books on hover */
+  }
+  .slideshow1-container{
+    width: 800px;
+    position: relative;
+    margin: auto;
+  }
+
+  .slides{
+    display: none;
+    text-align: center;
+  }
+
+  .slides img{
+    width: 30%;
+    height: 300px;
+    margin: 20px auto;
+  }
+
+  .text{
+    font-size: 18px;
+    color: #4d3c4f;;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  .prev, .next{
+    position: absolute;
+    top: 45%;
+    color: #4d3c4f;;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+  }
+
+  .prev{
+    left: 90px;
+  }
+
+  .next{
+    right: 90px;
+  }
+
+  .prev:hover, .next:hover{
+    background: rgba(0,0,0,0.8);
+  }
+
+  .fade{
+    animation-name: fade;
+    animation-duration: 0.5s;
+  }
+  @keyframes fade{
+    from{opacity: 0.4}
+    to{opacity: 1}
+  }
+  /* Add the following styles to your CSS file */
+  
+  .book-grid1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .book-grid1 > div {
+    width: calc(25% - 20px);
+    margin: 10px;
+    text-align: center;
+  }
+   /* Styling for the list container */
+   ul {
+     position: absolute; /* Positioned absolutely */
+     top: 50%; /* Positioned 50% from the top */
+     left: 50%; /* Positioned 50% from the left */
+     transform: translate(-50%, -50%); /* Centering the container */
+      display: flex; /* Displaying as flex container */
+      margin: 0; /* Removing default margin */
+      padding: 0; /* Removing default padding */
+    }
+  
+   /* Styling for the Font Awesome icons */
+   ul li a .fa {
+    font-size: 40px; /* Icon size */
+    color: #262626; /* Icon color */
+    line-height: 80px; /* Vertical alignment */
+    transition: 0.5s; /* Smooth transition */
+    padding-right: 14px; /* Space between icon and text */
+   }
+  
+   /* Styling for the text next to icons */
+   ul li a span {
+      padding: 0; /* Removing default padding */
+      margin: 0; /* Removing default margin */
+      position: absolute; /* Positioned absolutely */
+      top: 30px; /* Positioned 30px from the top */
+      color: #262626; /* Text color */
+      letter-spacing: 4px; /* Letter spacing */
+      transition: 0.5s; /* Smooth transition */
+   }
+  
+  /* Styling for each social media link */
+  ul li a {
+      text-decoration: none; /* Removing underline */
+      display: block; /* Displaying as block element */
+      width: 210px; /* Fixed width */
+      height: 80px; /* Fixed height */
+      background: #fff; /* Background color */
+      text-align: left; /* Text alignment */
+      padding-left: 20px; /* Left padding */
+      transform: rotate(-30deg) skew(25deg) translate(0,0); /* Transform skew effect */
+      transition: 0.5s; /* Smooth transition */
+      box-shadow: -20px 20px 10px rgba(0,0,0,0.5); /* Box shadow */
+   }
+  
+  /* Creating diagonal background shape */
+  ul li a:before {
+    content: ""; /* Empty content */
+    position: absolute; /* Positioned absolutely */
+    top: 10px; /* Positioned 10px from the top */
+    left: -20px; /* Positioned 20px from the left */
+    height: 100%; /* Full height */
+    width: 20px; /* Fixed width */
+    background: #b1b1b1; /* Background color */
+    transform: rotate(0deg) skewY(-45deg); /* Transform skew effect */
+   }
+  
+  /* Hover effects */
+   ul li:nth-child(1) a:hover {
+  background-color: #3b5998; /* Dark blue for Facebook */
+  }
+  
+  ul li:nth-child(2) a:hover {
+  background-color: #1da1f2; /* Pale blue for Twitter */
+  }
+  
+  ul li:nth-child(3) a:hover {
+   background-color: #bb5376; /* Pink for Instagram */
+}

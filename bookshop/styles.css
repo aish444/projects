@@ -1,0 +1,256 @@
+/* Style.css */
+
+/* General Styles */
+body {
+  font-family: Georgia, serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f0f7; /* Pale Pink */
+  color: #4d3c4f; /* Darker Purple */
+}
+
+/* Header Styles */
+header {
+  background-color: #e6d0e2;
+  padding: 10px;
+  text-align:left;
+}
+
+header h1 {
+  margin-left: 0;
+  color: #4d3c4f; /* Darker Purple */
+}
+/* Search Bar Styles */
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  margin-top: 20px
+}
+
+.search-bar input {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #f0e6f0; /* Lighter Pale Pink */
+  color: #4d3c4f; /* Darker Purple */
+  width: 200px;
+}
+
+.search-bar button {
+  background-color: #d4b5d8; /* Pale Purple */
+  color: #4d3c4f; /* Darker Purple */
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.search-bar button:hover {
+  background-color: #c79ed0; /* Slightly Darker Pale Purple */
+}
+
+
+/* Navigation Styles */
+nav {
+  background-color: #d4b5d8; /* Pale Purple */
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: #4d3c4f; /* Darker Purple */
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+nav a:hover {
+  color: #31273c; /* Darker Shade of Purple */
+}
+
+/* Main Content Styles */
+main {
+  padding: 20px;
+}
+
+section {
+  background-color: #f0e6f0; /* Lighter Pale Pink */
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+section h2 {
+  color: #4d3c4f; /* Darker Purple */
+}
+
+/* Book Image Styles */
+.book-image {
+  display: block;
+  margin: 20px auto;
+  max-width: 200px;
+  height: auto;
+  border: 1px solid #d4b5d8; /* Pale Purple */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Button Styles */
+.cta-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #d4b5d8; /* Pale Purple */
+  color: #4d3c4f; /* Darker Purple */
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+.cta-button:hover {
+  background-color: #c79ed0; /* Slightly Darker Pale Purple */
+}
+.header-with-bg {
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  height: 350px; /* Adjust the height as needed */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px
+ 
+}
+.header-with-bg nav {
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  left: 10px;
+  width: 100%;
+}
+
+ 
+.header-with-bg h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #4d3c4f;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.header-with-bg nav ul {
+  list-style-type: none;
+  padding: 0px;
+  left: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  align-items: space between;
+  align-items: center;
+}
+
+
+
+.header-with-bg nav a {
+  color: white;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  text-align: center;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #e6d0e2; /* Slightly Darker Pale Pink */
+  padding: 10px;
+  text-align: center;
+  color: #4d3c4f; /* Darker Purple */
+}
+/* Add the following styles to your CSS file */
+
+.section-with-slideshow {
+  position: relative;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Display 3 books in a row */
+  grid-gap: 10px;
+}
+
+.book {
+  width: 80%;
+  height: 300px; /* Set the book height */
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 1; /* Initially hide all books */
+  
+}
+
+.active {
+  opacity: 1;
+  transform: scale(1.2); /* Scale the active book slightly */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.book-grid:hover .book:not(.active) {
+  opacity: 0.5; /* Dim the non-active books on hover */
+}
+.slideshow1-container{
+	width: 800px;
+	position: relative;
+	margin: auto;
+}
+	
+.slides{
+	display: none;
+	text-align: center;
+}
+	
+.slides img{
+	width: 30%;
+	height: 300px;
+	margin: 20px auto;
+}
+	
+.text{
+	font-size: 18px;
+	color: #4d3c4f;;
+	font-weight: bold;
+	padding: 10px;
+}
+	
+.prev, .next{
+  position: absolute;
+	top: 45%;
+	color: #4d3c4f;;
+	font-weight: bold;
+	padding: 10px;
+	font-size: 18px;
+	border-radius: 0 3px 3px 0;
+	cursor: pointer;
+}
+	
+.prev{
+	left: 90px;
+}
+	
+.next{
+	right: 90px;
+}
+	
+.prev:hover, .next:hover{
+	background: rgba(0,0,0,0.8);
+}		
+	
+.fade{
+	animation-name: fade;
+	animation-duration: 0.5s;
+}
+@keyframes fade{
+	from{opacity: 0.4}
+	to{opacity: 1}}
+

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bookshop Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header-with-bg">
+    <nav>
+	  <ul>
+        <li><button class="cta-button"><a href="main.html">Home</button></a></li>
+        <li><button class="cta-button"><a href="book.xml">Books</a></li>
+        <li><button class="cta-button"><a href="aboutus.html">About Us</a></li>
+        <li><button class="cta-button"><a href="contactus.html">Contact us</a></li>
+        <li><button class="cta-button"><a href="cart.html">Cart</a></li>
+      </ul>
+     </nav>
+	 <h1>Bookworm's Haven</h1>	
+  </header>
+
+  
+  <main>
+    <section>
+      <h2>Trending Books</h2>
+	    <div id="slideshow-container">
+          <div class="book-grid">
+            <img src="pretty.jpeg" alt="Book 1" class="book">
+            <img src="achilles.jpeg" alt="Book 2" class="book">
+            <img src="jane.jpeg" alt="Book 3" class="book">
+            <img src="patient.jpeg" alt="Book 4" class="book">
+            <img src="over.jpeg" alt="Book 5" class="book">
+            <img src="ends.jpeg" alt="Book 6" class="book">
+          </div>
+       </div>
+	  </section>
+    
+    
+    <section>
+      <h2>Our Collection</h2>
+	    <div style="display: flex;">
+        <div style="width: 25%; text-align: center;">
+          <img src="ends.jpeg" alt="It ends with us" style="width: 25%; margin: 10px;">
+          <h3>It Ends With Us</h3>
+          <p>Author: Colleen Hoover</p>
+          <p>$9.99</p>
+          <button class="cta-button add-to-cart" data-book-id="1">Add to Cart</button>
+        </div>
+        <div style="width: 25%; text-align: center;">
+          <img src="pretty.jpeg" alt="The summer i turned pretty" style="width: 25%; margin: 10px;">
+          <h3>The Summer I Turned Pretty</h3>
+          <p>Author: Jenny Han</p>
+          <p>$11.99</p>
+          <button class="cta-button add-to-cart" data-book-id="2">Add to Cart</button>
+        </div>
+        <div style="width: 25%; text-align: center;">
+          <img src="bird.jpeg" alt="To kill  a mockingbird" style="width: 25%; margin: 10px;">
+          <h3>To Kill A Mockingbird</h3>
+          <p>Author: Harper Lee</p>
+          <p>$14.99</p>
+          <button class="cta-button add-to-cart" data-book-id="3">Add to Cart</button>
+        </div>
+        <div style="width: 25%; text-align: center;">
+          <img src="gatsby.jpeg" alt="Image The great gatsby" style="width: 25%; margin: 10px;">
+          <h3>The Great Gatsby</h3>
+          <p>Author: F.Scott Fitzgerald</p>
+          <p>$12.99</p>
+          <button class="cta-button add-to-cart" data-book-id="4">Add to Cart</button>
+        </div>
+	 </section>
+	 
+	 <section>
+    <div style="display: flex;">
+      <div style="width: 25%; text-align: center;">
+        <img src="harry.jpeg" alt="Harry Potter" style="width: 25%; margin: 10px;">
+        <h3>Harry Potter And The Sorcerer's Stone</h3>
+        <p>Author: J.K.Rowling</p>
+        <p>$10.99</p>
+        <button class="cta-button add-to-cart" data-book-id="5">Add to Cart</button>
+      </div>
+      <div style="width: 25%; text-align: center;">
+        <img src="games.jpeg" alt="hunger games" style="width: 25%; margin: 10px;">
+        <h3>The Hunger Games</h3>
+        <p>Author: Suzanne Collins</p>
+        <p>$9.99</p>
+        <button class="cta-button add-to-cart" data-book-id="6">Add to Cart</button>
+      </div>
+      <div style="width: 25%; text-align: center;">
+        <img src="stars.jpeg" alt="fault in our stars" style="width: 25%; margin: 10px;">
+        <h3>The Fault In Our Stars</h3>
+        <p>Author: John Green</p>
+        <p>$12.99</p>
+        <button class="cta-button add-to-cart" data-book-id="7">Add to Cart</button>
+      </div>
+      <div style="width: 25%; text-align: center;">
+        <img src="the women.jpeg" alt="the women" style="width: 25%; margin: 10px;">
+        <h3>The Women</h3>
+        <p>Author: Kristin Hannah</p>
+        <p>$15.99</p>
+        <button class="cta-button add-to-cart" data-book-id="8">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <div style="display: flex;">
+      <div style="width: 25%; text-align: center;">
+        <img src="malibu.jpeg" alt="Malibu Rising" style="width: 25%; margin: 10px;">
+        <h3>Malibu Rising</h3>
+        <p>Author: Taylor Jenkins Reid</p>
+        <p>$12.99</p>
+        <button class="cta-button add-to-cart" data-book-id="9">Add to Cart</button>
+      </div>
+      <div style="width: 25%; text-align: center;">
+        <img src="beach.jpeg" alt="The Beach house" style="width: 25%; margin: 10px;">
+        <h3>The Beach House</h3>
+        <p>Author: Rachel Hanna</p>
+        <p>$13.99</p>
+        <button class="cta-button add-to-cart" data-book-id="10">Add to Cart</button>
+      </div>
+      <div style="width: 25%; text-align: center;">
+        <img src="it starts with us.jpeg" alt="It start with us" style="width: 25%; margin: 10px;">
+        <h3>It Starts With Us</h3>
+        <p>Author:Colleen Hoover</p>
+        <p>$14.99</p>
+        <button class="cta-button add-to-cart" data-book-id="11">Add to Cart</button>
+      </div>
+      <div style="width: 25%; text-align: center;">
+        <img src="the alchemist.jpeg" alt="The Alchemist" style="width: 25%; margin: 10px;">
+        <h3>The Alchemist</h3>
+        <p>Author: Paulo Coelho</p>
+        <p>$13.99</p>
+        <button class="cta-button add-to-cart" data-book-id="12">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+	<section>
+      <div style="display: flex;">
+        <div style="width: 25%; text-align: center;">
+          <img src="daydream.jpeg" alt="Daydream" style="width: 25%; margin: 10px;">
+          <h3>Daydream</h3>
+          <p>Author: Hannah Grace</p>
+          <p>$10.99</p>
+          <button class="cta-button add-to-cart" data-book-id="13">Add to Cart</button>
+        </div>
+        <div style="width: 25%; text-align: center;">
+          <img src="caller.jpeg" alt="First-Time Caller" style="width: 25%; margin: 10px;">
+          <h3>First-Time Caller</h3>
+          <p>Author: B.k Borison</p>
+          <p>$10.00</p>
+          <button class="cta-button add-to-cart" data-book-id="14">Add to Cart</button>
+        </div>
+        <div style="width: 25%; text-align: center;">
+          <img src="patient.jpeg" alt="The Silent Patient" style="width: 25%; margin: 10px;">
+          <h3>The Silent Patient</h3>
+          <p>Author: Alex Michaelides</p>
+          <p>$14.00</p>
+          <button class="cta-button add-to-cart" data-book-id="15">Add to Cart</button>
+        </div>
+        <div style="width: 25%; text-align: center;">
+          <img src="over.jpeg" alt="Things We Never Got Over" style="width: 25%; margin: 10px;">
+          <h3>Things We Never Got Over</h3>
+          <p>Author: Lucy Score</p>
+          <p>$13.99</p>
+          <button class="cta-button add-to-cart" data-book-id="16">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div style="display: flex;">
+        <div style="width: 25%; text-align: center;">
+          <img src="twisted.jpeg" alt="Twisted love" style="width: 25%; margin: 10px;">
+          <h3>Twisted love</h3>
+          <p>Author: Ana Huang</p>
+          <p>$14.99</p>
+          <button class="cta-button add-to-cart" data-book-id="17">Add to Cart</button>
+        </div>
+        <div style="width: 25%; text-align: center;">
+          <img src="ove.jpeg" alt="A Man Called Ove" style="width: 25%; margin: 10px;">
+          <h3>A Man Called Ove</h3>
+          <p>Author: Fredrik Backman</p>
+          <p>$13.00</p>
+          <button class="cta-button add-to-cart" data-book-id="18">Add to Cart</button>
+        </div>
+        <div style="width: 25%; text-align: center;">
+          <img src="kite.jpeg" alt="The Kite Runner" style="width: 25%; margin: 10px;">
+          <h3>The Kite Runner</h3>
+          <p>Author: Khaled Hosseini</p>
+          <p>$15.00</p>
+          <button class="cta-button add-to-cart" data-book-id="19">Add to Cart</button>
+        </div>
+        <div style="width: 25%; text-align: center;">
+          <img src="achilles.jpeg" alt="The song of Achilles" style="width: 25%; margin: 10px;">
+          <h3>The song of Achilles</h3>
+          <p>Author: Madeline Miller</p>
+          <p>$15.99</p>
+          <button class="cta-button add-to-cart" data-book-id="20">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <div style="display: flex;">
+        <div style="width: 25%; text-align: center;">
+          <img src="pride.jpeg" alt="pride and prejudice" style="width: 25%; margin: 10px;">
+          <h3>Pride And Prejudice</h3>
+          <p>Author: Jane Austenr</p>
+          <p>$16.99</p>
+          <button class="cta-button add-to-cart" data-book-id="21">Add to Cart</button>
+        </div>
+        <div style="width: 25%; text-align: center;">
+          <img src="coast.jpeg" alt="The Coast Road" style="width: 25%; margin: 10px;">
+          <h3>The Coast Road</h3>
+          <p>Author: Alan Murrin</p>
+          <p>$12.00</p>
+          <button class="cta-button add-to-cart" data-book-id="22">Add to Cart</button>
+        </div>
+        <div style="width: 25%; text-align: center;">
+          <img src="jane.jpeg" alt="Jane Eyre" style="width: 25%; margin: 10px;">
+          <h3>Jane Eyre</h3>
+          <p>Author: Charlotte Bronte</p>
+          <p>$12.00</p>
+          <button class="cta-button add-to-cart" data-book-id="23">Add to Cart</button>
+        </div>
+        <div style="width: 25%; text-align: center;">
+          <img src="summer.jpeg" alt="Summer At Firefly Beach" style="width: 25%; margin: 10px;">
+          <h3>Summer At Firefly Beach</h3>
+          <p>Author: Jenny Hale</p>
+          <p>$15.00</p>
+          <button class="cta-button add-to-cart" data-book-id="24">Add to Cart</button>
+        </div>
+      </div>  
+    </section>   		  
+
+    <section>
+      <div style="display: flex;">
+        <div style="width: 25%; text-align: center;">
+          <img src="little.jpeg" alt="Little Women" style="width: 25%; margin: 10px;">
+          <h3>Little Women</h3>
+          <p>Author: Louisa May Alcott</p>
+          <p>$13.00</p>
+          <button class="cta-button add-to-cart" data-book-id="25">Add to Cart</button>
+        </div>
+        <div style="width: 25%; text-align: center;">
+          <img src="ugly.jpeg" alt="Ugly Love" style="width: 25%; margin: 10px;">
+          <h3>Ugly Love</h3>
+          <p>Author: Colleen Hoover</p>
+          <p>$13.99</p>
+          <button class="cta-button add-to-cart" data-book-id="26">Add to Cart</button>
+        </div>
+        <div style="width: 25%; text-align: center;">
+          <img src="sandwich.jpeg" alt="Sandwich" style="width: 25%; margin: 10px;">
+          <h3>Sandwich</h3>
+          <p>Author: Catherine Newman</p>
+          <p>$14.00</p>
+          <button class="cta-button add-to-cart" data-book-id="27">Add to Cart</button>
+        </div>
+        <div style="width: 25%; text-align: center;">
+          <img src="sapiens.jpeg" alt="sapiens" style="width: 25%; margin: 10px;">
+          <h3>Sapiens</h3>
+          <p>Author: Yuval Noah Harari</p>
+          <p>$13.99</p>
+          <button class="cta-button add-to-cart" data-book-id="28">Add to Cart</button>
+        </div>
+      </div>  
+    </section>
+    
+<script>
+  // Get the slideshow container and books
+  const slideshowContainer = document.getElementById('slideshow-container');
+  const books = slideshowContainer.querySelectorAll('.book');
+
+  // Set the current book index
+  let currentBookIndex = 0;
+
+  // Function to show the next book
+  function nextBook() {
+    // Hide the current book
+    books[currentBookIndex].classList.remove('active');
+
+    // Increment the current book index
+    currentBookIndex = (currentBookIndex + 1) % books.length;
+
+    // Show the next book
+    books[currentBookIndex].classList.add('active');
+  }
+
+  // Set the slideshow interval
+  setInterval(nextBook, 3000); // 3000ms = 3 seconds
+  
+</script>
+<!--  Cart  -->
+  <script>
+    // Functionality to handle adding items to the cart
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', addToCartClicked);
+    });
+
+    function addToCartClicked(event) {
+      const button = event.target;
+      const bookItem = button.parentElement;
+      const bookId = button.getAttribute('data-book-id');
+      const bookName = bookItem.querySelector('h3').innerText;
+      const bookPrice = bookItem.querySelector('p:last-of-type').innerText;
+
+      addToCart(bookId, bookName, bookPrice);
+      window.location.href = 'cart.html'; // Navigate to cart.html after adding to cart
+    }
+
+    function addToCart(bookId, bookName, bookPrice) {
+      // Retrieve existing cart items from localStorage or initialize an empty array
+      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+      // Check if the book is already in the cart
+      const existingItem = cartItems.find(item => item.id === bookId);
+      if (existingItem) {
+        existingItem.quantity += 1; // Increase quantity if already in cart
+      } else {
+        cartItems.push({ id: bookId, name: bookName, price: bookPrice, quantity: 1 });
+      }
+
+      // Update localStorage with the new cart items
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
+  </script>
+
+
+</main>
+
+<footer>
+  <!-- Linking Font Awesome stylesheet from CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <div class="footer-content">
+    <div class="footer-section links">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="giftcard.html">Gift Card</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-section newsletter">
+      <h2>Newsletter</h2>
+      <p>Subscribe to our newsletter for the latest updates.</p>
+      <form id="newsletterForm" action="aisharamjaun26@gmail.com">
+        <input type="email" id="emailInput" placeholder="Enter your email">
+        <button type="submit" id="subscribeBtn">Subscribe</button>
+      </form>
+      <p id="successMessage" style="display: none; color: rgb(130, 10, 96);">Subscribed successfully!</p>
+    </div>
+    <div class="footer-section contact">
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <p><i class="fa fa-phone"></i> 123 456</p>
+        <p><i class="fa fa-envelope"></i> info@bookwormshaven.com</p>
+      </div>
+      <div class="socials">
+        <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy;  Bookworm's Haven. All rights reserved. | <a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: #e6d0e2; /* Slightly Darker Pale Pink */
+    padding: 40px 0;
+    text-align: center;
+    color: #4d3c4f; /* Darker Purple */
+  }
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0 20px;
+    flex-wrap: wrap;
+  }
+  .footer-section {
+    flex: 1;
+    padding: 20px;
+  }
+  .footer-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #4d3c4f; /* Darker Purple */
+  }
+  .footer-section p,
+  .footer-section ul,
+  .footer-section form {
+    margin: 10px 0;
+    color: #4d3c4f; /* Darker Purple */
+  }
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+  .footer-section ul li a {
+    color: #4d3c4f; /* Darker Purple */
+    text-decoration: none;
+  }
+  .footer-section ul li a:hover {
+    text-decoration: underline;
+  }
+  .footer-section .socials a {
+    margin: 0 10px;
+    color: #4d3c4f; /* Darker Purple */
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+  .footer-section .socials a:hover {
+    color: #ff5733; /* Light Red */
+  }
+  .footer-section form input {
+    padding: 10px;
+    width: 70%;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background-color: #f0e6f0; /* Lighter Pale Pink */
+    color: #4d3c4f; /* Darker Purple */
+  }
+  .footer-section form button {
+    padding: 10px;
+    border: none;
+    background: #d4b5d8; /* Pale Purple */
+    color: #4d3c4f; /* Darker Purple */
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 8px;
+  }
+  .footer-section form button:hover {
+    background-color: #c79ed0; /* Slightly Darker Pale Purple */
+  }
+  .footer-bottom {
+    background-color: #d4b5d8; /* Pale Purple */
+    color: #4d3c4f; /* Darker Purple */
+    padding: 20px 0;
+    margin-top: 20px;
+    font-size: 0.9em;
+  }
+  .footer-bottom a {
+    color: #4d3c4f; /* Darker Purple */
+    text-decoration: none;
+  }
+  .footer-bottom a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('newsletterForm');
+    var successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Simulate successful subscription
+      successMessage.style.display = 'block';
+
+      // Optional: Reset the form after submission
+      form.reset();
+
+      // Optional: Hide success message after a few seconds
+      setTimeout(function() {
+        successMessage.style.display = 'none';
+      }, 3000); // 3000 milliseconds = 3 seconds
+    });
+  });
+</script>
+
+</body>
+</html>

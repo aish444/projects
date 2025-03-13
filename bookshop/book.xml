@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="book.xsl"?>
+
+<!DOCTYPE books [
+  <!ELEMENT books (book+)>
+  <!ELEMENT book (title, author, genre, price, inStock, publisher, publicationDate)>
+  <!ATTLIST book id CDATA #REQUIRED>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT author (firstName, lastName)>
+  <!ELEMENT firstName (#PCDATA)>
+  <!ELEMENT lastName (#PCDATA)>
+  <!ELEMENT genre (#PCDATA)>
+  <!ELEMENT price (#PCDATA)>
+  <!ELEMENT inStock (#PCDATA)>
+  <!ELEMENT publisher (name, location)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT location (#PCDATA)>
+  <!ELEMENT publicationDate (#PCDATA)>
+]>
+
+<books>
+  <book id="1">
+    <title>It Ends With Us</title>
+    <author>
+      <firstName>Colleen</firstName>
+      <lastName>Hoover</lastName>
+    </author>
+    <genre>Romance</genre>
+    <price>9.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Atria Books</name>
+      <location>New York</location>
+    </publisher>
+    <publicationDate>2016-08-02</publicationDate>
+	
+	
+  </book>
+  <book id="2">
+    <title>The Summer I Turned Pretty</title>
+    <author>
+      <firstName>Jenny</firstName>
+      <lastName>Han</lastName>
+    </author>
+    <genre>Romance</genre>
+    <price>11.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Simon and Schuster</name>
+      <location>New York</location>
+    </publisher>
+    <publicationDate>2009-05-05</publicationDate>
+  </book>
+  <book id="3">
+    <title>To Kill a Mockingbird</title>
+    <author>
+      <firstName>Harper</firstName>
+      <lastName>Lee</lastName>
+    </author>
+    <genre>Southern Gothic Fiction</genre>
+    <price>14.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>J.B. Lippincott and Co</name>
+      <location>Philadelphia</location>
+    </publisher>
+    <publicationDate>1960-07-11</publicationDate>
+  </book>
+  <book id="4">
+    <title>The Great Gatsby</title>
+    <author>
+      <firstName>F. Scott</firstName>
+      <lastName>Fitzgerald</lastName>
+    </author>
+    <genre>Literary Fiction</genre>
+    <price>12.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Charles Scribner's Sons</name>
+      <location>New York</location>
+    </publisher>
+    <publicationDate>1925-04-10</publicationDate>
+  </book>
+  <book id="5">
+    <title>Harry Potter and the Sorcerer's Stone</title>
+    <author>
+      <firstName>Joanne</firstName>
+      <lastName>Rowling</lastName>
+    </author>
+    <genre>Fantasy Novel</genre>
+    <price>10.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Bloomsbury</name>
+      <location>London</location>
+    </publisher>
+    <publicationDate>1998-09-01</publicationDate>
+  </book>
+  <book id="6">
+    <title>The Hunger Games</title>
+    <author>
+      <firstName>Suzanne</firstName>
+      <lastName>Collins</lastName>
+    </author>
+    <genre>Fiction</genre>
+    <price>9.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Scholastic</name>
+      <location>New York</location>
+    </publisher>
+    <publicationDate>2008-09-14</publicationDate>
+  </book>
+    <book id="7">
+    <title>The Fault In Our Stars</title>
+    <author>
+      <firstName>John</firstName>
+      <lastName>Green</lastName>
+    </author>
+    <genre>Romance</genre>
+    <price>14.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Dutton Books</name>
+      <location>New York</location>
+    </publisher>
+    <publicationDate>2012-01-10</publicationDate>
+  </book>
+  <book id="8">
+    <title>The Women</title>
+    <author>
+      <firstName>Kristin</firstName>
+      <lastName>Hannah</lastName>
+    </author>
+    <genre>Fiction</genre>
+    <price>15.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>St. Martin's Press</name>
+      <location>New York</location>
+    </publisher>
+    <publicationDate>2020-02-11</publicationDate>
+  </book>
+  <book id="9">
+    <title>The Song of Achilles</title>
+    <author>
+      <firstName>Madeline</firstName>
+      <lastName>Miller</lastName>
+    </author>
+    <genre>Romance Fantasy</genre>
+    <price>15.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Ecco Press</name>
+      <location>United States</location>
+    </publisher>
+    <publicationDate>2011-09-20</publicationDate>
+  </book>
+  <book id="10">
+    <title>The Beach House</title>
+    <author>
+      <firstName>Rachel</firstName>
+      <lastName>Hanna</lastName>
+    </author>
+    <genre>Romance</genre>
+    <price>13.00</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Rachel Hanna</name>
+      <location>New York</location>
+    </publisher>
+    <publicationDate>2019-09-27</publicationDate>
+  </book>
+  <book id="11">
+    <title>First-time Caller</title>
+    <author>
+      <firstName>B.k</firstName>
+      <lastName>Borison</lastName>
+    </author>
+    <genre>Romance</genre>
+    <price>13.00</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Berkly Books</name>
+      <location>New York</location>
+    </publisher>
+    <publicationDate>2024-02-11</publicationDate>
+  </book>
+  <book id="12">
+    <title>The Coast Road</title>
+    <author>
+      <firstName>Alan</firstName>
+      <lastName>Murrin</lastName>
+    </author>
+    <genre>Fiction</genre>
+    <price>12.00</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>harper collins</name>
+      <location>New York</location>
+    </publisher>
+    <publicationDate>2024-06-04</publicationDate>
+  </book>
+  <book id="13">
+    <title>Daydream</title>
+    <author>
+      <firstName>Hannah</firstName>
+      <lastName>Grace</lastName>
+    </author>
+    <genre>romance</genre>
+    <price>10.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Maple hills</name>
+      <location>New York</location>
+    </publisher>
+    <publicationDate>2024-08-27</publicationDate>
+  </book>
+  <book id="14">
+    <title>It Starts With Us</title>
+    <author>
+      <firstName>Colleen</firstName>
+      <lastName>Hoover</lastName>
+    </author>
+    <genre>new adult fiction</genre>
+    <price>14.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Atria Books</name>
+      <location>New York</location>
+    </publisher>
+    <publicationDate>2022-10-08</publicationDate>
+  </book>
+  <book id="15">
+    <title>Jane Eyre</title>
+    <author>
+      <firstName>Charlotte</firstName>
+      <lastName>Bronte</lastName>
+    </author>
+    <genre>Gothic romance</genre>
+    <price>12.00</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Smith Elder and Co</name>
+      <location>New York</location>
+    </publisher>
+    <publicationDate>1847-10-19</publicationDate>
+  </book>
+  <book id="16">
+    <title>The Kite Runner</title>
+    <author>
+      <firstName>Khaled</firstName>
+      <lastName>Hosseini</lastName>
+    </author>
+    <genre>Historical Fiction</genre>
+    <price>15.00</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Riverhead Books</name>
+      <location>United States</location>
+    </publisher>
+    <publicationDate>2003-05-29</publicationDate>
+  </book>
+  <book id="17">
+    <title>Little Women</title>
+    <author>
+      <firstName>Louisa May</firstName>
+      <lastName>Alcott</lastName>
+    </author>
+    <genre>Coming of age</genre>
+    <price>13.00</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Roberts Brothers</name>
+      <location>United States</location>
+    </publisher>
+    <publicationDate>1868</publicationDate>
+  </book>
+  <book id="18">
+    <title>Malibu Rising</title>
+    <author>
+      <firstName>Taylor Jenkins</firstName>
+      <lastName>Reid</lastName>
+    </author>
+    <genre>Historical Fiction</genre>
+    <price>12.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Ballantines Books</name>
+      <location>Unites States</location>
+    </publisher>
+    <publicationDate>2021-06-01</publicationDate>
+  </book>
+  <book id="19">
+    <title>A Man Called Ove</title>
+    <author>
+      <firstName>Fredrik</firstName>
+      <lastName>Backman</lastName>
+    </author>
+    <genre>Novel</genre>
+    <price>13.00</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Atria Books</name>
+      <location>New York</location>
+    </publisher>
+    <publicationDate>2014-07-15</publicationDate>
+  </book>
+  <book id="20">
+    <title>Things We Never Get Over</title>
+    <author>
+      <firstName>Lucy</firstName>
+      <lastName>Score</lastName>
+    </author>
+    <genre>Romance</genre>
+    <price>13.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Blooms Books</name>
+      <location>United States</location>
+    </publisher>
+    <publicationDate>2022-01-12</publicationDate>
+  </book>
+  <book id="21">
+    <title>The Silent Patient</title>
+    <author>
+      <firstName>Alex</firstName>
+      <lastName>Michaelides</lastName>
+    </author>
+    <genre>thriller</genre>
+    <price>14.00</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Celadon Books</name>
+      <location>United States</location>
+    </publisher>
+    <publicationDate>2019-02-05</publicationDate>
+  </book>
+  <book id="22">
+    <title>Pride And Prejudice</title>
+    <author>
+      <firstName>Jane</firstName>
+      <lastName>Austen</lastName>
+    </author>
+    <genre>Classic Regency</genre>
+    <price>16.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Dover Publications</name>
+      <location>United States</location>
+    </publisher>
+    <publicationDate>1813-01-28</publicationDate>
+  </book>
+  <book id="23">
+    <title>Sandwich</title>
+    <author>
+      <firstName>Catherine</firstName>
+      <lastName>Newman</lastName>
+    </author>
+    <genre>Historical Fiction</genre>
+    <price>14.00</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Harper Collins</name>
+      <location>United States</location>
+    </publisher>
+    <publicationDate>2024-06-18</publicationDate>
+  </book>
+  <book id="24">
+    <title>Sapiens</title>
+    <author>
+      <firstName>Yuval Noah</firstName>
+      <lastName>Harari</lastName>
+    </author>
+    <genre>Non-Fiction</genre>
+    <price>13.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Random House</name>
+      <location>United kingdom</location>
+    </publisher>
+    <publicationDate>2015-04-15</publicationDate>
+  </book>
+  <book id="25">
+    <title>The Summer I Turned Pretty</title>
+    <author>
+      <firstName>Jenny</firstName>
+      <lastName>Han</lastName>
+    </author>
+    <genre>Romance</genre>
+    <price>11.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Simon and Schuster</name>
+      <location>New York</location>
+    </publisher>
+    <publicationDate>2009</publicationDate>
+  </book>
+  <book id="26">
+    <title>The Alchemist</title>
+    <author>
+      <firstName>Paulo</firstName>
+      <lastName>Coelho</lastName>
+    </author>
+    <genre>Fantasy</genre>
+    <price>13.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Haper Touch</name>
+      <location>United kingdom</location>
+    </publisher>
+    <publicationDate>1988</publicationDate>
+  </book>
+  <book id="27">
+    <title>Twisted Love</title>
+    <author>
+      <firstName>Ana</firstName>
+      <lastName>Huang</lastName>
+    </author>
+    <genre>Romance</genre>
+    <price>14.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Bloom Books</name>
+      <location>United kingdom</location>
+    </publisher>
+    <publicationDate>2022</publicationDate>
+  </book>
+  <book id="28">
+    <title>Ugly Love</title>
+    <author>
+      <firstName>Colleen</firstName>
+      <lastName>Hoover</lastName>
+    </author>
+    <genre>Romance</genre>
+    <price>13.99</price>
+    <inStock>true</inStock>
+    <publisher>
+      <name>Simon ad Schuster</name>
+      <location>United kingdom</location>
+    </publisher>
+    <publicationDate>2014-08-05</publicationDate>
+  </book>
+</books>

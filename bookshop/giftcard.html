@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Cards - Bookshop</title>
+    <style>
+        /* Reset and general styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4d3c4f; /* Darker Purple */
+        }
+
+        .gift-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .gift-card img {
+            max-width: 100px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+
+        .gift-card-info {
+            flex: 1;
+        }
+
+        .gift-card-info h2 {
+            margin: 0;
+            color: #4d3c4f; /* Darker Purple */
+        }
+
+        .gift-card-info p {
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: #d4b5d8; /* Pale Purple */
+            color: #4d3c4f; /* Darker Purple */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #c79ed0; /* Slightly Darker Pale Purple */
+        }
+
+        footer {
+            background-color: #e6d0e2; /* Slightly Darker Pale Pink */
+            padding: 10px;
+            text-align: center;
+            color: #4d3c4f; /* Darker Purple */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Back button */
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px; /* Position to bottom right corner */
+            z-index: 999; /* Ensure it's on top of other elements */
+        }
+
+        .back-button a {
+            background-color: #6f4d82; /* Purple */
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: block; /* Make the button a block element for full width */
+            text-align: center; /* Center text */
+        }
+
+        .back-button a:hover {
+            background-color: #5c3b6a; /* Darker Purple */
+        }
+
+        /* View Cart button */
+        .view-cart-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* Position to bottom left corner */
+            z-index: 999; /* Ensure it's on top of other elements */
+        }
+
+        .view-cart-button a {
+            background-color: #6f4d82; /* Purple */
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: block; /* Make the button a block element for full width */
+            text-align: center; /* Center text */
+        }
+
+        .view-cart-button a:hover {
+            background-color: #5c3b6a; /* Darker Purple */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gift Cards</h1>
+        <div class="gift-card">
+            <img src="card (1).png" alt="Gift Card 1">
+            <div class="gift-card-info">
+                <h2>$25 Gift Card</h2>
+                <p>Give the gift of books with our $25 gift card.</p>
+                <button class="btn" onclick="addToCart('25')">Add to cart</button>
+            </div>
+        </div>
+
+        <div class="gift-card">
+            <img src="card (2).png" alt="Gift Card 2">
+            <div class="gift-card-info">
+                <h2>$50 Gift Card</h2>
+                <p>Our $50 gift card is perfect for avid readers.</p>
+                <button class="btn" onclick="addToCart('50')">Add to cart</button>
+            </div>
+        </div>
+
+        <div class="gift-card">
+            <img src="card (3).png" alt="Gift Card 3">
+            <div class="gift-card-info">
+                <h2>$100 Gift Card</h2>
+                <p>Delight someone special with our $100 gift card.</p>
+                <button class="btn" onclick="addToCart('100')">Add to cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="main.html">Back</a>
+    </div>
+
+    <!-- View Cart Button -->
+    <div class="view-cart-button">
+        <a href="cart.html">View Cart</a>
+    </div>
+
+    <script>
+        // Function to handle adding items to the cart
+        function addToCart(amount) {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems.push({ name: `$${amount} Gift Card`, price: `$${amount}`, quantity: 1 });
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            alert(`Added $${amount} Gift Card to cart!`);
+        }
+    </script>
+</body>
+</html>

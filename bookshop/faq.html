@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Bookshop</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your custom stylesheet -->
+    <style>
+        body {
+            font-family: Georgia, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-image: url('bg.jpg');
+            background-size: cover; /* Ensure the background image covers the entire container */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+        }
+        h1 {
+            color: #333;
+        }
+        .faq {
+            margin-bottom: 20px;
+        }
+        .faq h3 {
+            margin: 0;
+            padding: 10px 0;
+            cursor: pointer;
+            background-color: #d4b5d8; /* Pale Purple */
+            color: #4d3c4f; /* Darker Purple */
+            border-radius: 5px;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .faq h3:hover {
+            background-color: #c79ed0; /* Slightly Darker Pale Purple */
+        }
+        .faq p {
+            display: none;
+            margin: 0;
+            padding: 0 0 10px 0;
+            background-color: #f0e6f0; /* Lighter Pale Pink */
+            border: 1px solid #d4b5d8; /* Pale Purple */
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        /* Back button */
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px; /* Position to bottom right corner */
+            z-index: 999; /* Ensure it's on top of other elements */
+        }
+
+        .back-button a {
+            background-color: #6f4d82; /* Purple */
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: block; /* Make the button a block element for full width */
+            text-align: center; /* Center text */
+        }
+
+        .back-button a:hover {
+            background-color: #5c3b6a; /* Darker Purple */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">What are your business hours?</h3>
+            <p>Our business hours are Monday to Thursday, 10 AM to 7 PM, Friday to Saturday, 10 AM to 8 PM and Sunday, 12 PM to 6 PM</p>
+        </div>
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">Where are you located?</h3>
+            <p>We are located at 123 Main Street, Anytown USA.</p>
+        </div>
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">Do you offer online ordering?</h3>
+            <p>Yes, you can order books online through our website.</p>
+        </div>
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">What payment methods do you accept?</h3>
+            <p>We accept Visa, MasterCard, American Express, and PayPal.</p>
+        </div>
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">Can I return or exchange books?</h3>
+            <p>Yes, you can return or exchange books within 7 days of purchase with proof of receipt.</p>
+        </div>
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">How can I contact customer support?</h3>
+            <p>You can contact our customer support team at info@bookwormshaven.com or call us at 555-555-5555.</p>
+        </div>
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">Do you have a book recommendation service?</h3>
+            <p>Yes, we have knowledgeable staff who can provide personalized book recommendations based on your preferences. Contact us for assistance.</p>
+        </div>
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">Are there any upcoming sales or promotions?</h3>
+            <p>We periodically offer sales and promotions. Follow us on social media and subscribe to our newsletter to stay informed about our latest offers.</p>
+        </div>
+        <div class="faq">
+            <h3 onclick="toggleAnswer(this)">Do you offer discounts for bulk orders or for educators?</h3>
+            <p>Yes, we offer discounts for bulk orders and for educators. Please contact us for more information and to discuss your specific needs.</p>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="#" onclick="goBack()">Back</a>
+    </div>
+
+    <script>
+        // Function to toggle the visibility of the answer
+        function toggleAnswer(element) {
+            var answer = element.nextElementSibling;
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Function to go back to previous screen
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

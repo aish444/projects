@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Bookshop</title>
+    <style>
+        /* Reset and general styles */
+        body {
+            font-family: Georgia, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #4d3c4f; /* Darker Purple */
+            margin-top: 20px;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Background image */
+        .bg-image {
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Back button */
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .back-button a {
+            background-color: #6f4d82; /* Purple */
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button a:hover {
+            background-color: #5c3b6a; /* Darker Purple */
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-image">
+        <div class="container">
+            <h1>Terms of Service</h1>
+            <p>Welcome to our bookshop website. By accessing our site, you agree to comply with the following terms of service.</p>
+            <h2>1. Use of Site</h2>
+            <p>You may use our site for lawful purposes only. You may not use our site to engage in any fraudulent activity.</p>
+            <h2>2. Product Descriptions</h2>
+            <p>We strive to ensure that our product descriptions are accurate. However, we do not warrant that product descriptions or other content on our site are error-free.</p>
+            <h2>3. Changes to Terms</h2>
+            <p>We reserve the right to update these terms of service at any time. Your continued use of the site constitutes your acceptance of the new terms.</p>
+        </div>
+
+        <!-- Back Button -->
+        <div class="back-button">
+            <a href="#" onclick="goBack()">Back</a>
+        </div>
+    </div>
+
+    <script>
+        // Function to go back to previous screen
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

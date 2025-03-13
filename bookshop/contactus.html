@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bookshop Website</title>
+  <style type="text/css">
+
+
+  /* General Styles */
+body {
+  font-family: Georgia, serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f0f7; /* Pale Pink */
+  color: #4d3c4f; /* Darker Purple */
+}
+
+/* Header Styles */
+header {
+  background-color: #e6d0e2; /* Slightly Darker Pale Pink */
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  color: #4d3c4f; /* Darker Purple */
+}
+
+/* Navigation Styles */
+nav {
+  background-color: #d4b5d8; /* Pale Purple */
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: #4d3c4f; /* Darker Purple */
+  text-decoration: none;
+  margin: 0 20px;
+}
+
+nav a:hover {
+  color: #31273c; /* Darker Shade of Purple */
+}
+
+/* Main Content Styles */
+main {
+  padding: 20px;
+}
+
+section {
+  background-color: #f0e6f0; /* Lighter Pale Pink */
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+section h2 {
+  color: #4d3c4f; /* Darker Purple */
+}
+
+
+/* Button Styles */
+.cta-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #d4b5d8; /* Pale Purple */
+  color: #4d3c4f; /* Darker Purple */
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+.cta-button:hover {
+  background-color: #c79ed0; /* Slightly Darker Pale Purple */
+}
+.header-with-bg {
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px
+  }
+  .header-with-bg nav {
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  left: 10px;
+  width: 100%;
+}
+ 
+.header-with-bg h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #4d3c4f;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.header-with-bg nav ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  align-items: space between;
+  align-items: center;
+}
+
+.header-with-bg nav a {
+  color: white;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  display:  inline-block;
+  text-align: center;
+}
+
+
+    /* Table and Map Styles */
+    .timetable-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px;
+    }
+
+    .table-container {
+      width: 50%;
+    }
+
+   .map-container {
+  position: absolute;
+  top: 90%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  width: 50%; 
+  height: 300px; 
+  padding: 0;
+  border: none;
+}  
+    
+    
+    /* Footer Styles */
+footer {
+  background-color: #e6d0e2; /* Slightly Darker Pale Pink */
+  padding: 10px;
+  text-align: center;
+  color: #4d3c4f; /* Darker Purple */
+}    
+.timetable {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  width: 50%;
+  margin: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.timetable thead {
+  background-color: #e6d0e2;
+  color: #4d3c4f;
+}
+
+.timetable th, .timetable td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.timetable th {
+  font-weight: bold;
+}
+
+.timetable tbody tr:nth-child(even) {
+  background-color: #f8f0f7;
+}
+
+.timetable tbody tr:hover {
+  background-color: #d4b5d8;
+  cursor: pointer;
+}
+
+.timetable td {
+  position: relative;
+}
+
+.timetable td:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #c79ed0;
+  border-radius: 10px 0 0 10px;
+}
+  </style>
+</head>
+<body>
+  <header class="header-with-bg">
+    <nav>
+      <ul>
+        <li><button class="cta-button"><a href="main.html">Home</button></a></li>
+        <li><button class="cta-button"><a href="book.xml">Books</a></li>
+        <li><button class="cta-button"><a href="aboutus.html">About Us</a></li>
+        <li><button class="cta-button"><a href="contactus.html">Contact us</a></li>
+		<li><button class="cta-button"><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+	<h1>Bookworm's Haven</h1>
+  </header>
+  
+  <main>
+    <section>
+      <h2>contact us!</h2>
+      <ul>
+        <li>Address: 123 Main Street, Anytown USA</li>
+        <li>Phone: 123 456</li>
+        <li>Email: info@bookwormshaven.com</li>
+      </ul>
+    <div class="timetable-container">	 
+     <div class="table-container">	 
+	  <table class="timetable">
+       <thead>
+        <tr>
+         <th>Day</th>
+         <th>Time</th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+          <td>Monday-Thursday</td>
+          <td>10:00 AM - 7:00 PM</td>
+        </tr>
+        <tr>
+          <td>Friday-Saturday</td>
+          <td>10:00 AM - 8:00 PM</td>
+        </tr>
+		<tr>
+          <td>Sunday</td>
+          <td>10:00 AM - Noon</td>
+        </tr>
+      </tbody>
+      </table>
+	 </div>
+	</div>
+		<div class="map-container">
+                
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.4729246209854!2d57.39272357438451!3d-20.280682849322826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217c5c9f4d1c80b5%3A0x9088d2393f5f29c8!2sMiddlesex%20University%20Mauritius!5e0!3m2!1sen!2smu!4v1721032966604!5m2!1sen!2smu" width="650" height="300" frameborder="1" style="border:0" allowfullscreen></iframe>
+        </div>
+	 <h3> We are closed on public holidays :(</h3>
+	 </section>   
+	  
+  </main>
+   <footer>
+    <p>&copy; 2024 Bookworm's Haven. All rights reserved.</p>
+   </footer>
+ </body>
+</html>
